@@ -248,8 +248,29 @@
                     <!-- <a class="btn hvr-hover" href="#">Read More</a> -->
                 </div>
                 <div class="col-lg-6">
-                    <div class="banner-frame"> <img class="img-fluid" src="images/about-img.jpg" alt="" />
+                    <div class="banner-frame"> <img class="img-fluid" src="images/our_vision.jpg" alt="" />
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="noo-sh-title-top">Our Mission</h2>
+                    <p>Our mission is being a global network transforming agriculture to secure a sustainable future food systems relatioship of nature, urban and rural communities</p>
+                    <p>To promote research and training on sustainable development of agricultural productivity, cost reduction in farming, farm mechanization and farm  production.  To provide consultancy in agriculture to disseminate the technology innovation to the producer through integrated extension activities.</p>
+                    <p>Prosperous farmers and rural communities, by associating with other organizations, government and companies that facilitate the scalability of the positive impact of the technical projects related to key issues</p>
+                    <!-- <a class="btn hvr-hover" href="#">Read More</a> -->
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="noo-sh-title-top">Our Values </h2>
+                    <p>We comitted to provide safe, quality  food to the consumers.</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;• Passion,Quality, Equality and Ethics .</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;• Creative, Flexible and Innovative.</p>
+                    <p>To reduce post-harvest losses, reduction in import and increasing exports.</p>
+                    <!-- <a class="btn hvr-hover" href="#">Read More</a> -->
                 </div>
             </div>
         </div>

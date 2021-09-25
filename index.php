@@ -85,7 +85,7 @@
     <!-- End Slider -->
 
     <!-- Start Categories  -->
-    <!-- <div class="categories-shop">
+    <div class="categories-shop">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -108,7 +108,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- End Categories -->
 
     <div class="box-add-products">
@@ -129,7 +129,7 @@
     </div>
 
     <!-- Start Products  -->
-    <!-- <div class="products-box">
+    <div class="products-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -257,7 +257,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- End Products  -->
 
     <!-- Start Blog  -->

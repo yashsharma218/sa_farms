@@ -15,13 +15,13 @@
                 </div>
                 <div class="our-link">
                     <ul>
-                        <!-- <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li> -->
+                        <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
                         <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
                         <li><a href="contact-us.php"><i class="fas fa-headset"></i> Contact Us</a></li>
                     </ul>
                 </div>
             </div>
-            <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="login-box">
                     <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
                         <option>Register Here</option>
@@ -58,7 +58,7 @@
                         </ul>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </div>
@@ -83,7 +83,7 @@
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
-                    <!-- <li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                         <ul class="dropdown-menu">
                             <li><a href="shop.php">Sidebar Shop</a></li>
@@ -93,7 +93,7 @@
                             <li><a href="my-account.php">My Account</a></li>
                             <li><a href="wishlist.php">Wishlist</a></li>
                         </ul>
-                    </li> -->
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
                 </ul>
@@ -104,19 +104,19 @@
             <div class="attr-nav">
                 <ul>
                     <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                    <!-- <li class="side-menu">
+                    <li class="side-menu">
                         <a href="#">
                             <i class="fa fa-shopping-bag"></i>
                             <span class="badge">3</span>
                             <p>My Cart</p>
                         </a>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
-        <!-- <div class="side">
+        <div class="side">
             <a href="#" class="close-side"><i class="fa fa-times"></i></a>
             <li class="cart-box">
                 <ul class="cart-list">
@@ -141,8 +141,8 @@
                     </li>
                 </ul>
             </li>
-        </div> -->
-        <!-- End Side Menu -->
+        </div>
+        <!-- End Side Menu -->  
     </nav>
     <!-- End Navigation -->
 </header>

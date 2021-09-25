@@ -1,3 +1,7 @@
+<?php
+    include "include/connect.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -62,7 +66,7 @@
                 <div class="col-lg-8 col-sm-12">
                     <div class="contact-form-right">
                         <h2>GET IN TOUCH</h2><br>
-                        <form id="contactForm">
+                        <form method="post">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -74,25 +78,25 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <input type="text" placeholder="Your Email" id="email" class="form-control"
-                                            name="name" required data-error="Please enter your email">
+                                            name="email" required data-error="Please enter your email">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="subject" name="name"
+                                        <input type="text" class="form-control" id="subject" name="subject"
                                             placeholder="Subject" required data-error="Please enter your Subject">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="message" placeholder="Your Message" rows="4"
+                                        <textarea class="form-control" id="message" name="message" placeholder="Your Message" rows="4"
                                             data-error="Write your message" required></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="submit-button text-center">
-                                        <button class="btn hvr-hover" id="submit" type="submit">Send Message</button>
+                                        <button class="btn hvr-hover" id="submit" name="submit" type="submit">Send Message</button>
                                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                                         <div class="clearfix"></div>
                                     </div>
@@ -239,3 +243,37 @@
 </body>
 
 </html>
+
+<?php
+    if(isset($_POST['submit'])){
+        $name=$_POST['name'];
+        $email=$_POST['email'];
+        $subject=$_POST['subject'];
+        $message=$_POST['message'];
+
+        if(!isset($name) || $name === ''){
+            
+            echo"<script>alert ('Please Enter Name..');</script>";
+        }
+        elseif(!isset($email)|| $email === ''){
+            echo"<script>alert ('Please Enter E-mail..');</script>";
+        }
+        elseif(!isset($subject)|| $subject === ''){
+            echo"<script>alert ('Please Enter Subject..');</script>";
+        }
+        elseif(!isset($message)|| $message === ''){
+            echo"<script>alert ('Please Enter Message..');</script>";
+        }else{
+            $query="insert into contact_us values('','$name','$email','$subject','$message')";
+            $result=mysqli_query($conn, $query);
+
+            if($result){
+                echo"<script>alert('Your Message Sent..');
+                window.location.replace('contact-us.php');</script>";
+            }else{
+                echo"<script>alert('Your Message not Sent..');
+                window.location.replace('contact-us.php');</script>";
+            }
+        }
+    }
+?>
