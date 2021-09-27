@@ -93,6 +93,10 @@
     <p>
         Copyright &copy; 2021 All rights reserved | This template is made with : <a href="#">RA Info Solution</a><br>
     </p>
+    <p>
+        Click here to admin Login :
+        <a href="admin/index.php" target="blank" style="color: red;">Admin Panel Login</a><br>
+    </p>
 </div>
 <!-- End copyright  -->
 

@@ -88,7 +88,7 @@
     <!-- End Slider -->
 
     <!-- Start Categories  -->
-    <div class="categories-shop">
+    <!-- <div class="categories-shop">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -111,7 +111,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Categories -->
 
     <div class="box-add-products">
@@ -170,7 +170,9 @@
                             <div class="type-lb">
                                 <p class="sale"><?php echo $row['status'] ?></p>
                             </div>
-                            <img src="admin/<?php echo $row['photo'] ?>" class="img-fluid" alt="Image">
+                            
+                            <img src="admin/<?php echo $row['photo'] ?>" style="height: 230px;" class="img-fluid" alt="Image">
+                            
                             <div class="mask-icon">
                                 <!-- <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i

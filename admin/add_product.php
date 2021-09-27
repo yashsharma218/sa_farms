@@ -62,14 +62,20 @@
                                             placeholder="Product Name" aria-label="Product Name">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="category"
-                                            name="category" type="text" required="" placeholder="Category"
-                                            aria-label="Category">
+                                        <select name="category" id="category"
+                                            class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
+                                            <option value="">--Select Category--</option>
+                                            <option value="Fruit">Fruit</option>
+                                            <option value="Vegetable">Vegetable</option>
+                                        </select>
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="status"
-                                            name="status" type="text" required="" placeholder="Status"
-                                            aria-label="Status">
+                                        <select id="status" name="status"
+                                            class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
+                                            <option value="">--Select Status--</option>
+                                            <option value="New">New</option>
+                                            <option value="Sale">Sale</option>
+                                        </select>
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="price"
@@ -78,7 +84,7 @@
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="photo"
-                                            name="photo" type="file"  aria-label="Photo">
+                                            name="photo" type="file" aria-label="Photo">
                                     </div><br>
                                     <div>
                                         <button

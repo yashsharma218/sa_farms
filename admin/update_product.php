@@ -55,7 +55,7 @@
                             </div>
                             <div class="p-3">
                                 <form class="w-full" method="POST" enctype="multipart/form-data">
-                                <?php
+                                    <?php
                                     $query = "select * from product where id=$id";
                                     $result = mysqli_query($conn,$query);
 
@@ -63,25 +63,34 @@
                                 ?>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
-                                            id="product_name" name="product_name" value="<?php echo $row['veg_name']?>" type="text" required=""
-                                            placeholder="Product Name" aria-label="Product Name">
+                                            id="product_name" name="product_name" value="<?php echo $row['veg_name']?>"
+                                            type="text" required="" placeholder="Product Name"
+                                            aria-label="Product Name">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="category" value="<?php echo $row['categories']?>" name="category" type="text" required="" placeholder="Category"
-                                            aria-label="Category">
+                                        <select name="category" id="category" value="<?php echo $row['categories']?>"
+                                            class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
+                                            <option value="<?php echo $row['categories']?>">--Select Category--</option>
+                                            <option value="Fruit">Fruit</option>
+                                            <option value="Vegetable">Vegetable</option>
+                                        </select>
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="status" value="<?php echo $row['status']?>"
-                                            name="status" type="text" required="" placeholder="Status"
-                                            aria-label="Status">
+                                    <select id="status" name="status"
+                                            class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
+                                            <option value="<?php echo $row['status']?>">--Select Status--</option>
+                                            <option value="New">New</option>
+                                            <option value="Sale">Sale</option>
+                                        </select>
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="price" value="<?php echo $row['price']?>"
-                                            name="price" type="number" required="" placeholder="Price"
-                                            aria-label="Price">
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="price"
+                                            value="<?php echo $row['price']?>" name="price" type="number" required=""
+                                            placeholder="Price" aria-label="Price">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="photo" name="photo" required="" type="file" aria-label="Photo">
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="photo"
+                                            name="photo" required="" type="file" aria-label="Photo">
                                     </div><br>
                                     <?php } ?>
                                     <div>
