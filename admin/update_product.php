@@ -7,6 +7,8 @@
     if(!isset($username)){
         header('location: login.php');
     }
+
+    $id = $_GET['P_ID'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,114 +47,51 @@
                 <main class="bg-white-300 flex-1 p-3 overflow-hidden">
 
                     <div class="flex flex-col">
-                        <!-- Card Sextion Starts Here -->
-
-
                         <div
                             class="mb-2 md:mx-2 lg:mx-2 border-solid border-gray-200 rounded border shadow-sm w-full md:w-1/2 lg:w-1/2">
                             <br>
                             <div class="font-bold text-xl">
-                                &nbsp;&nbsp; Add New Product
+                                &nbsp;&nbsp; Update Product
                             </div>
                             <div class="p-3">
                                 <form class="w-full" method="POST" enctype="multipart/form-data">
+                                <?php
+                                    $query = "select * from product where id=$id";
+                                    $result = mysqli_query($conn,$query);
+
+                                    while($row = mysqli_fetch_array($result)){
+                                ?>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
-                                            id="product_name" name="product_name" type="text" required=""
+                                            id="product_name" name="product_name" value="<?php echo $row['veg_name']?>" type="text" required=""
                                             placeholder="Product Name" aria-label="Product Name">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="category"
-                                            name="category" type="text" required="" placeholder="Category"
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="category" value="<?php echo $row['categories']?>" name="category" type="text" required="" placeholder="Category"
                                             aria-label="Category">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="status"
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="status" value="<?php echo $row['status']?>"
                                             name="status" type="text" required="" placeholder="Status"
                                             aria-label="Status">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="price"
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="price" value="<?php echo $row['price']?>"
                                             name="price" type="number" required="" placeholder="Price"
                                             aria-label="Price">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="photo"
-                                            name="photo" type="file"  aria-label="Photo">
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="photo" name="photo" required="" type="file" aria-label="Photo">
                                     </div><br>
+                                    <?php } ?>
                                     <div>
                                         <button
                                             class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
-                                            type="submit" name="add_product">Add Product</button>
+                                            type="submit" name="update_product">Update Product</button>
                                     </div>
                                 </form>
                             </div>
-                        </div><br>
-
-
-
-                        <hr class="border-t mx-2 border-grey-ligght"><br>
-
-
-
-
-                        <div class="flex flex-1 flex-col md:flex-row lg:flex-row">
-
-                            <!-- card -->
-
-                            <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
-                                <div class="px-6 py-2 border-b border-light-grey">
-                                    <div class="font-bold text-xl">Product List</div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table text-grey-darkest">
-                                        <thead class="bg-grey-dark text-white text-normal">
-                                            <tr>
-                                                <th scope="col">Sr No.</th>
-                                                <th scope="col">Product Name</th>
-                                                <th scope="col">Category</th>
-                                                <th scope="col">Status</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Photo</th>
-                                                <th scope="col">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                                $query = "select * from product";
-                                                $result = mysqli_query($conn,$query);
-                                                $srno = 0;
-                                                while($row = mysqli_fetch_array($result))
-                                                {
-                                            ?>
-                                            <tr>
-                                                <th scope="row"><?php echo ++$srno; ?></th>
-                                                <td><?php echo $row['veg_name']; ?></td>
-                                                <td><?php echo $row['categories']; ?></td>
-                                                <td><?php echo $row['status']; ?></td>
-                                                <td><?php echo $row['price']; ?></td>
-                                                <td><?php echo $row['photo']; ?></td>
-                                                <td>
-                                                    <a href='update_product.php?P_ID=<?php echo $row['id'] ?>'><i
-                                                            class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
-                                                    <a href='delete_product.php?P_ID=<?php echo $row['id'] ?>'><i
-                                                            class="fas fa-trash"></i></a>
-                                                </td>
-                                            </tr>
-                                            <?php
-                                                }
-                                            ?>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-                            <!-- /card -->
-
                         </div>
-                        <!-- /Cards Section Ends Here -->
-
-
                     </div>
                 </main>
                 <!--/Main-->
@@ -172,19 +111,17 @@
 </html>
 
 <?php
-    if(isset($_POST['add_product']))
+    if(isset($_POST['update_product']))
     {
         $product_name=$_POST['product_name'];
         $category=$_POST['category'];
         $status=$_POST['status'];
         $price=$_POST['price'];
-        
+
         $source = $_FILES['photo']['tmp_name'];
 		$dest = "images/".$_FILES['photo']['name'];
 
-        if(!move_uploaded_file($source, $dest)){
-			echo "<script>alert('Select Photo')</script>";	
-}else{	
+        	
 
         if (!isset($product_name) || $product_name === '') {
             ?>
@@ -216,14 +153,15 @@ alert("Please Enter Price.. ");
 <?php
         }
         else{
-       $query = "INSERT INTO product VALUES ('','$product_name', '$category', '$status','$price','$dest');";
+       $query = "UPDATE product SET veg_name='$product_name', categories='$category', status= '$status', price='$price', photo='$dest' where id=$id";
+
        $record = mysqli_query($conn, $query);
       
        if( $record){
        ?>
 
 <script type="text/javascript">
-alert("Your Product Add");
+alert("Your Product Update..");
 window.location = "add_product.php";
 </script>
 <?php
@@ -238,6 +176,5 @@ window.location = "add_product.php";
 <?php
       }              
       }
-    }
     }
 ?>
