@@ -222,7 +222,7 @@ alert("Please Enter Price.. ");
 <?php
         }
         else{
-       $query = "INSERT INTO product VALUES ('','$product_name', '$category', '$status','$price','$dest');";
+       $query = "INSERT INTO product VALUES ('','$product_name', '$category', '$status','$price','$dest')";
        $record = mysqli_query($conn, $query);
       
        if( $record){
