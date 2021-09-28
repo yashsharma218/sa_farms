@@ -1,96 +1,83 @@
-<?php
-    include "include/connect.php";
-?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<!-- Basic -->
 
 <head>
+    <title>SARUBAI AGRO FARMER LOGIN</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Site Metas -->
-    <title>SARUBAI AGRO FARMER CONTACT US</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="admin/./dist/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
+<style>
+        .login{
+            background: url('admin/./dist/images/login-new.jpeg')
+        }
+    </style>
 
-<body>
-    <!-- Start Contact Us  -->
-    <div class="contact-box-main">
-        <div class="container" align="center">
-            <div class="row">
-                <div class="col-lg-8 col-sm-12">
-                    <div class="contact-form-right">
-                        <h2>Login</h2><br>
-                        <form method="post">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="name" name="name"
-                                            placeholder="Your Name" required data-error="Please enter your name">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Your Email" id="email" class="form-control"
-                                            name="email" required data-error="Please enter your email">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="submit-button text-center">
-                                        <button class="btn hvr-hover" id="submit" name="submit" type="submit">Login</button>
-                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+<body class="h-screen font-sans login bg-cover">
+    <div class="container mx-auto h-full flex flex-1 justify-center items-center">
+        <div class="w-full max-w-lg">
+            <div class="leading-loose">
+                <form class="max-w-xl m-4 p-10 bg-white rounded shadow-xl" method="post">
+                    <p class="text-gray-800 font-medium text-center text-lg font-bold">Login</p>
+                    <div class="">
+                        <label class="block text-sm text-gray-00" for="username">Username</label>
+                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="username" name="username"
+                            type="text" required="" placeholder="User Name" aria-label="username">
                     </div>
-                </div>
-
-    <!-- ALL JS FILES -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- ALL PLUGINS -->
-    <script src="js/jquery.superslides.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-    <script src="js/inewsticker.js"></script>
-    <script src="js/bootsnav.js."></script>
-    <script src="js/images-loded.min.js"></script>
-    <script src="js/isotope.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/baguetteBox.min.js"></script>
-    <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
-    <script src="js/custom.js"></script>
+                    <div class="mt-2">
+                        <label class="block text-sm text-gray-600" for="password">Password</label>
+                        <input class="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded" id="password" name="password"
+                            type="password" required="" placeholder="*******" aria-label="password">
+                    </div>
+                    <div class="mt-4 items-center justify-between" align=center>
+                        <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
+                            type="submit">Login</button>
+                        <a class="inline-block right-0 align-baseline  font-bold text-sm text-500 hover:text-blue-800"
+                            href="#">
+                            Forgot Password?
+                        </a>
+                    </div>
+                    <div class="mt-4 items-center justify-between" align=center>
+                    <a class="inline-block right-0 align-baseline font-bold text-sm text-500 hover:text-blue-800"
+                        href="user_registration.php">
+                        Not registered Click Here?
+                    </a><br>
+                    <a class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
+                        href="index.php">Skip Login..</a>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
+
+<?php
+    include "include/connect.php";
+    session_start();
+                     
+       if($_SERVER["REQUEST_METHOD"] == "POST") {
+                                      
+        $User_ID = mysqli_real_escape_string($conn,$_POST['username']);
+        $Password = mysqli_real_escape_string($conn,$_POST['password']); 
+        $_SESSION['User_ID'] = $User_ID;
+        $sql = "select email, password from user";
+        $result= mysqli_query($conn, $sql);
+          while ($row = mysqli_fetch_array($result)) {
+             if ($User_ID==$row['email'] & $Password==$row['password']){                                    
+                   header("location: index.php");                                           
+              }else{
+              ?>
+<script type="text/javascript">
+alert("Incorrect Username or Password..");
+</script>
+<?php
+                                    }
+                                    }
+                                    }
+                                ?>
