@@ -39,8 +39,8 @@ include "include/connect.php"
 </head>
 
 <body>
-    <?php 
-        include "include/header.php";
+    <?php
+    include "include/header.php";
     ?>
 
     <!-- Start Slider -->
@@ -155,26 +155,26 @@ include "include/connect.php"
             </div>
 
             <div class="row special-list">
-            <?php
-                                    $query = "select * from product";
-                                    $result = mysqli_query($conn,$query);
+                <?php
+                $query = "select * from product";
+                $result = mysqli_query($conn, $query);
 
-                                    while($row = mysqli_fetch_array($result)){
-                                ?>
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                
-                    <div class="products-single fix">
-                    
-                        <div class="box-img-hover">
-                        
-                            <div class="type-lb">
-                                <p class="sale"><?php echo $row['status'] ?></p>
-                            </div>
-                            
-                            <img src="admin/<?php echo $row['photo'] ?>" style="height: 230px;" class="img-fluid" alt="Image">
-                            
-                            <div class="mask-icon">
-                                <!-- <ul>
+                while ($row = mysqli_fetch_array($result)) {
+                ?>
+                    <div class="col-lg-3 col-md-6 special-grid best-seller">
+
+                        <div class="products-single fix">
+
+                            <div class="box-img-hover">
+
+                                <div class="type-lb">
+                                    <p class="sale"><?php echo $row['status'] ?></p>
+                                </div>
+
+                                <img src="admin/<?php echo $row['photo'] ?>" style="height: 230px;" class="img-fluid" alt="Image">
+
+                                <div class="mask-icon">
+                                    <!-- <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
                                                 class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i
@@ -182,21 +182,21 @@ include "include/connect.php"
                                     <li><a href="#" data-toggle="tooltip" data-placement="right"
                                             title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul> -->
-                                <!-- <a class="cart" href="#">Add to Cart</a> -->
+                                    <!-- <a class="cart" href="#">Add to Cart</a> -->
+                                </div>
                             </div>
+                            <div class="why-text">
+                                <h4><?php echo $row['veg_name'] ?></h4>
+                                <h5><?php echo $row['price'] ?>Rs/-</h5>
+                            </div>
+
                         </div>
-                        <div class="why-text">
-                            <h4><?php echo $row['veg_name'] ?></h4>
-                            <h5><?php echo $row['price'] ?>Rs/-</h5>
-                        </div>
-                        
+
                     </div>
-                    
-                </div>
                 <?php
-                                    }
-                        ?> 
-                
+                }
+                ?>
+
             </div>
         </div>
     </div>
@@ -368,7 +368,7 @@ include "include/connect.php"
 
 
     <?php
-        include "include/footer.php";
+    include "include/footer.php";
     ?>
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>

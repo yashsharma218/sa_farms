@@ -59,12 +59,11 @@
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
                                             id="product_name" name="product_name" type="text" required=""
-                                            placeholder="Product Name" aria-label="Product Name">
+                                            placeholder="Product Name *" aria-label="Product Name">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <select name="category" id="category"
                                             class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
-                                            <option value="">--Select Category--</option>
                                             <option value="Fruit">Fruit</option>
                                             <option value="Vegetable">Vegetable</option>
                                         </select>
@@ -72,15 +71,21 @@
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <select id="status" name="status"
                                             class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
-                                            <option value="">--Select Status--</option>
                                             <option value="New">New</option>
                                             <option value="Sale">Sale</option>
                                         </select>
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="price"
-                                            name="price" type="number" required="" placeholder="Price"
+                                            name="price" type="number" required="" placeholder="Price *"
                                             aria-label="Price">
+                                    </div><br>
+                                    <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+                                        <select id="stock" name="stock"
+                                            class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
+                                            <option value="In Stock">In Stock</option>
+                                            <option value="Out of Stock">Out of Stock</option>
+                                        </select>
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="photo"
@@ -120,6 +125,7 @@
                                                 <th scope="col">Status</th>
                                                 <th scope="col">Price</th>
                                                 <th scope="col">Photo</th>
+                                                <th scope="col">Availability</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
@@ -138,6 +144,7 @@
                                                 <td><?php echo $row['status']; ?></td>
                                                 <td><?php echo $row['price']; ?></td>
                                                 <td><?php echo $row['photo']; ?></td>
+                                                <td><?php echo $row['stock']; ?></td>
                                                 <td>
                                                     <a href='update_product.php?P_ID=<?php echo $row['id'] ?>'><i
                                                             class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
@@ -184,6 +191,7 @@
         $category=$_POST['category'];
         $status=$_POST['status'];
         $price=$_POST['price'];
+        $stock=$_POST['stock'];
         
         $source = $_FILES['photo']['tmp_name'];
 		$dest = "images/".$_FILES['photo']['name'];
@@ -220,9 +228,15 @@ alert("Please Select Status.. ");
 alert("Please Enter Price.. ");
 </script>
 <?php
+        }elseif (!isset($stock) || $stock === '') {
+            ?>
+<script type="text/javascript">
+alert("Please Select Stock.. ");
+</script>
+<?php
         }
         else{
-       $query = "INSERT INTO product VALUES ('','$product_name', '$category', '$status','$price','$dest')";
+       $query = "INSERT INTO product VALUES ('','$product_name', '$category', '$status','$price','$dest','$stock')";
        $record = mysqli_query($conn, $query);
       
        if( $record){

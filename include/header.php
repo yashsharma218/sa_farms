@@ -1,3 +1,10 @@
+<?php
+    include "include/connect.php";
+    session_start();
+    if (isset($_SESSION['User_ID'])){
+    $username=$_SESSION['User_ID'];
+}
+?>
 <!-- Start Main Top -->
 <div class="main-top">
     <div class="container-fluid">
@@ -47,7 +54,7 @@
                                 <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
                             </li>
                             <li>
-                                <i class="fab fa-opencart"></i> Off 50%! Shop Now 
+                                <i class="fab fa-opencart"></i> Off 50%! Shop Now
                             </li>
                         </ul>
                     </div>
@@ -65,9 +72,10 @@
         <div class="container">
             <!-- Start Header Navigation -->
             <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+                    aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
                 <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt=""></a>
             </div>
             <!-- End Header Navigation -->
@@ -77,10 +85,14 @@
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
+                    <?php 
+                    if (isset($_SESSION['User_ID'])){
+                        if(isset($username)|| $username === ''){
+                    ?>
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SHOP</a>
                         <ul class="dropdown-menu">
-                            <li><a href="shop.php">Sidebar Shop</a></li>
+                            <li><a href="shop.php">Shop</a></li>
                             <li><a href="shop-detail.php">Shop Detail</a></li>
                             <li><a href="cart.php">Cart</a></li>
                             <li><a href="checkout.php">Checkout</a></li>
@@ -88,9 +100,23 @@
                             <li><a href="wishlist.php">Wishlist</a></li>
                         </ul>
                     </li>
+                    <?php }
+                }?>
                     <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
+                    <?php 
+                        if(!isset($username)|| $username === ''){
+                    ?>
                     <li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li>
+                    <?php }
+                    ?>
+                    <?php 
+                    if (isset($_SESSION['User_ID'])){
+                        if(isset($username)|| $username === ''){
+                    ?>
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                    <?php }
+                }?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -137,7 +163,7 @@
                 </ul>
             </li>
         </div>
-        <!-- End Side Menu -->  
+        <!-- End Side Menu -->
     </nav>
     <!-- End Navigation -->
 </header>
