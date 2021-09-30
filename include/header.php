@@ -1,8 +1,8 @@
 <?php
-    include "include/connect.php";
-    session_start();
-    if (isset($_SESSION['User_ID'])){
-    $username=$_SESSION['User_ID'];
+include "include/connect.php";
+session_start();
+if (isset($_SESSION['User_ID'])) {
+    $username = $_SESSION['User_ID'];
 }
 ?>
 <!-- Start Main Top -->
@@ -32,30 +32,16 @@
                 <div class="text-slid-box">
                     <div id="offer-box" class="carouselTicker">
                         <ul class="offer-box">
-                            <li>
-                                <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> Off 50%! Shop Now
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
-                            </li>
-                            <li>
-                                <i class="fab fa-opencart"></i> Off 50%! Shop Now
-                            </li>
+                            <?php
+                            $query = "select * from offer";
+                            $result = mysqli_query($conn, $query);
+
+                            while ($row = mysqli_fetch_array($result)) {
+                            ?>
+                                <li>
+                                    <i class="fab fa-opencart"></i> <?php echo $row['offer']?>
+                                </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
@@ -72,8 +58,7 @@
         <div class="container">
             <!-- Start Header Navigation -->
             <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
-                    aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt=""></a>
@@ -85,38 +70,38 @@
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
-                    <?php 
-                    if (isset($_SESSION['User_ID'])){
-                        if(isset($username)|| $username === ''){
+                    <?php
+                    if (isset($_SESSION['User_ID'])) {
+                        if (isset($username) || $username === '') {
                     ?>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SHOP</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="shop.php">Shop</a></li>
-                            <li><a href="shop-detail.php">Shop Detail</a></li>
-                            <li><a href="cart.php">Cart</a></li>
-                            <li><a href="checkout.php">Checkout</a></li>
-                            <li><a href="my-account.php">My Account</a></li>
-                            <li><a href="wishlist.php">Wishlist</a></li>
-                        </ul>
-                    </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SHOP</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="shop.php">Shop</a></li>
+                                    <li><a href="shop-detail.php">Shop Detail</a></li>
+                                    <li><a href="cart.php">Cart</a></li>
+                                    <li><a href="checkout.php">Checkout</a></li>
+                                    <li><a href="my-account.php">My Account</a></li>
+                                    <li><a href="wishlist.php">Wishlist</a></li>
+                                </ul>
+                            </li>
                     <?php }
-                }?>
+                    } ?>
                     <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
-                    <?php 
-                        if(!isset($username)|| $username === ''){
+                    <?php
+                    if (!isset($username) || $username === '') {
                     ?>
-                    <li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li>
                     <?php }
                     ?>
-                    <?php 
-                    if (isset($_SESSION['User_ID'])){
-                        if(isset($username)|| $username === ''){
+                    <?php
+                    if (isset($_SESSION['User_ID'])) {
+                        if (isset($username) || $username === '') {
                     ?>
-                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                            <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                     <?php }
-                }?>
+                    } ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
