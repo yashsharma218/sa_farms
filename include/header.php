@@ -1,10 +1,3 @@
-<?php
-include "include/connect.php";
-session_start();
-if (isset($_SESSION['User_ID'])) {
-    $username = $_SESSION['User_ID'];
-}
-?>
 <!-- Start Main Top -->
 <div class="main-top">
     <div class="container-fluid">
@@ -70,11 +63,8 @@ if (isset($_SESSION['User_ID'])) {
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
-                    <?php
-                    if (isset($_SESSION['User_ID'])) {
-                        if (isset($username) || $username === '') {
-                    ?>
-                            <li class="dropdown">
+                    <li class="nav-item"><a class="nav-link" href="shop.php">Shop</a></li>
+                            <!-- <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SHOP</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="shop.php">Shop</a></li>
@@ -84,9 +74,7 @@ if (isset($_SESSION['User_ID'])) {
                                     <li><a href="my-account.php">My Account</a></li>
                                     <li><a href="wishlist.php">Wishlist</a></li>
                                 </ul>
-                            </li>
-                    <?php }
-                    } ?>
+                            </li> -->
                     <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
                     <?php

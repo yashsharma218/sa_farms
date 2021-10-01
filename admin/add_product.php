@@ -69,15 +69,7 @@
                                         </select>
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <select id="status" name="status"
-                                            class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
-                                            <option value="New">New</option>
-                                            <option value="Sale">Sale</option>
-                                        </select>
-                                    </div><br>
-                                    <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="price"
-                                            name="price" type="number" required="" placeholder="Price *"
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="price" name="price" type="number" required="" placeholder="Price *"
                                             aria-label="Price">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
@@ -90,6 +82,9 @@
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="photo"
                                             name="photo" type="file" aria-label="Photo">
+                                    </div><br>
+                                    <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+                                            <textarea class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" name="description" id="description" placeholder="Short Description *  Descirption Should be less than 200 words" cols="30" rows="5" required></textarea>
                                     </div><br>
                                     <div>
                                         <button
@@ -124,8 +119,9 @@
                                                 <th scope="col">Category</th>
                                                 <th scope="col">Status</th>
                                                 <th scope="col">Price</th>
-                                                <th scope="col">Photo</th>
                                                 <th scope="col">Availability</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Photo</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
@@ -143,8 +139,9 @@
                                                 <td><?php echo $row['categories']; ?></td>
                                                 <td><?php echo $row['status']; ?></td>
                                                 <td><?php echo $row['price']; ?></td>
-                                                <td><?php echo $row['photo']; ?></td>
                                                 <td><?php echo $row['stock']; ?></td>
+                                                <td><?php echo $row['description']; ?></td>
+                                                <td><img style="border-radius:50%!important; height:60px; width:70px;" src="<?php echo $row['photo']; ?>" alt="Image"></td>
                                                 <td>
                                                     <a href='update_product.php?P_ID=<?php echo $row['id'] ?>'><i
                                                             class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
@@ -189,9 +186,9 @@
     {
         $product_name=$_POST['product_name'];
         $category=$_POST['category'];
-        $status=$_POST['status'];
         $price=$_POST['price'];
         $stock=$_POST['stock'];
+        $description=$_POST['description'];
         
         $source = $_FILES['photo']['tmp_name'];
 		$dest = "images/".$_FILES['photo']['name'];
@@ -215,13 +212,6 @@ alert("Please Select Category.. ");
 <?php
         
         }
-        elseif (!isset($status) || $status === '') {
-          ?>
-<script type="text/javascript">
-alert("Please Select Status.. ");
-</script>
-<?php
-        }
         elseif (!isset($price) || $price === '') {
             ?>
 <script type="text/javascript">
@@ -234,9 +224,17 @@ alert("Please Enter Price.. ");
 alert("Please Select Stock.. ");
 </script>
 <?php
+        }elseif (!isset($description) || $description === '') {
+            ?>
+<script type="text/javascript">
+alert("Please Enter Price.. ");
+</script>
+<?php
         }
         else{
-       $query = "INSERT INTO product VALUES ('','$product_name', '$category', '$status','$price','$dest','$stock')";
+       $query = "INSERT INTO product(veg_name,categories,price,photo,stock,description) VALUES ('$product_name','$category','$price','$dest','$stock','$description')";
+    //    echo $query;
+    //    exit();
        $record = mysqli_query($conn, $query);
       
        if( $record){

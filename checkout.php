@@ -1,3 +1,15 @@
+<?php
+include "include/connect.php";
+session_start();
+$username = $_SESSION['User_ID'];
+$qty = isset($_POST['qty']) ? $_POST['qty'] : "";
+
+if (!isset($username)) {
+    header('location: login.php');
+}
+
+$id = $_GET['P_ID'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -10,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+    <title>SARUBAI AGRO FARMER SHOP Cheakout</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -36,8 +48,8 @@
 </head>
 
 <body>
-    <?php 
-        include "include/header.php";
+    <?php
+    include "include/header.php";
     ?>
     <!-- Start All Title Box -->
     <div class="all-title-box">
@@ -46,7 +58,7 @@
                 <div class="col-lg-12">
                     <h2>Checkout</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item"><a href="shop.php">Shop</a></li>
                         <li class="breadcrumb-item active">Checkout</li>
                     </ul>
                 </div>
@@ -58,7 +70,7 @@
     <!-- Start Cart  -->
     <div class="cart-box-main">
         <div class="container">
-            <div class="row new-account-login">
+            <!-- <div class="row new-account-login">
                 <div class="col-sm-6 col-lg-6 mb-3">
                     <div class="title-left">
                         <h3>Account Login</h3>
@@ -107,71 +119,72 @@
                         <button type="submit" class="btn hvr-hover">Register</button>
                     </form>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-sm-6 col-lg-6 mb-3">
                     <div class="checkout-address">
                         <div class="title-left">
                             <h3>Billing address</h3>
                         </div>
-                        <form class="needs-validation" novalidate>
+                        <form method="post">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="firstName">First name *</label>
-                                    <input type="text" class="form-control" id="firstName" placeholder="" value=""
-                                        required>
+                                    <input type="text" class="form-control" id="first_name" name="first_name"
+                                        placeholder="First Name" value="" required>
                                     <div class="invalid-feedback"> Valid first name is required. </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="lastName">Last name *</label>
-                                    <input type="text" class="form-control" id="lastName" placeholder="" value=""
-                                        required>
+                                    <input type="text" class="form-control" id="last_name" name="last_name"
+                                        placeholder="Last Name" value="" required>
                                     <div class="invalid-feedback"> Valid last name is required. </div>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="username">Username *</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="username" placeholder="" required>
+                                    <input type="text" class="form-control" id="user_name" name="user_name"
+                                        placeholder="User Name" required>
                                     <div class="invalid-feedback" style="width: 100%;"> Your username is required.
                                     </div>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="email">Email Address *</label>
-                                <input type="email" class="form-control" id="email" placeholder="">
+                                <input type="email" class="form-control" id="email" name="email" placeholder=" Email">
                                 <div class="invalid-feedback"> Please enter a valid email address for shipping updates.
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="address">Address *</label>
-                                <input type="text" class="form-control" id="address" placeholder="" required>
+                                <input type="text" class="form-control" id="address" name="address" placeholder="Adress"
+                                    required>
                                 <div class="invalid-feedback"> Please enter your shipping address. </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="address2">Address 2 *</label>
-                                <input type="text" class="form-control" id="address2" placeholder="">
                             </div>
                             <div class="row">
                                 <div class="col-md-5 mb-3">
                                     <label for="country">Country *</label>
-                                    <select class="wide w-100" id="country">
-                                        <option value="Choose..." data-display="Select">Choose...</option>
+                                    <select class="wide w-100" id="country" name="country">
+                                        <option value="India">India</option>
                                         <option value="United States">United States</option>
+                                        <option value="Dubai">Dubai</option>
                                     </select>
                                     <div class="invalid-feedback"> Please select a valid country. </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="state">State *</label>
-                                    <select class="wide w-100" id="state">
-                                        <option data-display="Select">Choose...</option>
-                                        <option>California</option>
+                                    <select class="wide w-100" id="state" name="state">
+                                        <option value="Maharashtra">Maharashtra</option>
+                                        <option value="Rajasthan">Rajasthan</option>
+                                        <option value="kerala">kerala</option>
                                     </select>
                                     <div class="invalid-feedback"> Please provide a valid state. </div>
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label for="zip">Zip *</label>
-                                    <input type="text" class="form-control" id="zip" placeholder="" required>
+                                    <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip"
+                                        required>
                                     <div class="invalid-feedback"> Zip code required. </div>
                                 </div>
                             </div>
@@ -182,19 +195,20 @@
                                     my billing address</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="save-info">
-                                <label class="custom-control-label" for="save-info">Save this information for next
-                                    time</label>
+                                <input type="checkbox" class="custom-control-input" id="save_address"
+                                    name="save_address" value="Save this information for next
+                                    time">
+                                <label class="custom-control-label" for="save_adress">Save this information for next time</label>
                             </div>
                             <hr class="mb-4">
                             <div class="title"> <span>Payment</span> </div>
                             <div class="d-block my-3">
                                 <div class="custom-control custom-radio">
-                                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
-                                        checked required>
-                                    <label class="custom-control-label" for="credit">Credit card</label>
+                                    <input id="payment_method" name="payment_method" type="radio"
+                                        class="custom-control-input" value="Cash On Delivery" checked required>
+                                    <label class="custom-control-label" for="cashon delivery">Cash On Delivery</label>
                                 </div>
-                                <div class="custom-control custom-radio">
+                                <!-- <div class="custom-control custom-radio">
                                     <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
                                         required>
                                     <label class="custom-control-label" for="debit">Debit card</label>
@@ -203,9 +217,9 @@
                                     <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input"
                                         required>
                                     <label class="custom-control-label" for="paypal">Paypal</label>
-                                </div>
+                                </div> -->
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="cc-name">Name on card</label>
                                     <input type="text" class="form-control" id="cc-name" placeholder="" required> <small
@@ -217,8 +231,8 @@
                                     <input type="text" class="form-control" id="cc-number" placeholder="" required>
                                     <div class="invalid-feedback"> Credit card number is required </div>
                                 </div>
-                            </div>
-                            <div class="row">
+                            </div> -->
+                            <!-- <div class="row">
                                 <div class="col-md-3 mb-3">
                                     <label for="cc-expiration">Expiration</label>
                                     <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
@@ -240,9 +254,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <hr class="mb-1">
-                        </form>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-6 mb-3">
@@ -254,50 +267,33 @@
                                 </div>
                                 <div class="mb-4">
                                     <div class="custom-control custom-radio">
-                                        <input id="shippingOption1" name="shipping-option" class="custom-control-input"
-                                            checked="checked" type="radio">
-                                        <label class="custom-control-label" for="shippingOption1">Standard
+                                        <input id="shipping_method" name="shipping_method" class="custom-control-input" value="Standard
+                                            Delivery Free" checked="checked" type="radio">
+                                        <label class="custom-control-label" for="shipping_method">Standard
                                             Delivery</label> <span class="float-right font-weight-bold">FREE</span>
-                                    </div>
-                                    <div class="ml-4 mb-2 small">(3-7 business days)</div>
-                                    <div class="custom-control custom-radio">
-                                        <input id="shippingOption2" name="shipping-option" class="custom-control-input"
-                                            type="radio">
-                                        <label class="custom-control-label" for="shippingOption2">Express
-                                            Delivery</label> <span class="float-right font-weight-bold">$10.00</span>
-                                    </div>
-                                    <div class="ml-4 mb-2 small">(2-4 business days)</div>
-                                    <div class="custom-control custom-radio">
-                                        <input id="shippingOption3" name="shipping-option" class="custom-control-input"
-                                            type="radio">
-                                        <label class="custom-control-label" for="shippingOption3">Next Business
-                                            day</label> <span class="float-right font-weight-bold">$20.00</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php
+                        $query = "select * from product where id=$id";
+                        $result = mysqli_query($conn, $query);
+
+                        while ($row = mysqli_fetch_array($result)) {
+                        ?>
                         <div class="col-md-12 col-lg-12">
                             <div class="odr-box">
                                 <div class="title-left">
-                                    <h3>Shopping cart</h3>
+                                    <h3>Product Details</h3>
                                 </div>
                                 <div class="rounded p-2 bg-light">
                                     <div class="media mb-2 border-bottom">
-                                        <div class="media-body"> <a href="detail.html"> Lorem ipsum dolor sit amet</a>
-                                            <div class="small text-muted">Price: $80.00 <span class="mx-2">|</span> Qty:
-                                                1 <span class="mx-2">|</span> Subtotal: $80.00</div>
-                                        </div>
-                                    </div>
-                                    <div class="media mb-2 border-bottom">
-                                        <div class="media-body"> <a href="detail.html"> Lorem ipsum dolor sit amet</a>
-                                            <div class="small text-muted">Price: $60.00 <span class="mx-2">|</span> Qty:
-                                                1 <span class="mx-2">|</span> Subtotal: $60.00</div>
-                                        </div>
-                                    </div>
-                                    <div class="media mb-2">
-                                        <div class="media-body"> <a href="detail.html"> Lorem ipsum dolor sit amet</a>
-                                            <div class="small text-muted">Price: $40.00 <span class="mx-2">|</span> Qty:
-                                                1 <span class="mx-2">|</span> Subtotal: $40.00</div>
+                                        <div class="media-body"> <a href=""> <?php echo $row['veg_name']; ?></a>
+                                            <div class="small text-muted"><?php echo $row['price']; ?> <span
+                                                    class="mx-2">|</span> Qty:<?php echo $qty; ?><span
+                                                    class="mx-2">|</span> Subtotal:
+                                                <?php $row['price'] = $row['price'] * $qty;
+                                                    echo $row['price']; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -315,20 +311,13 @@
                                 <hr class="my-1">
                                 <div class="d-flex">
                                     <h4>Sub Total</h4>
-                                    <div class="ml-auto font-weight-bold"> $ 440 </div>
-                                </div>
-                                <div class="d-flex">
-                                    <h4>Discount</h4>
-                                    <div class="ml-auto font-weight-bold"> $ 40 </div>
-                                </div>
-                                <hr class="my-1">
-                                <div class="d-flex">
-                                    <h4>Coupon Discount</h4>
-                                    <div class="ml-auto font-weight-bold"> $ 10 </div>
+                                    <div class="ml-auto font-weight-bold"><?php echo $row['price']; ?>Rs/-</div>
                                 </div>
                                 <div class="d-flex">
                                     <h4>Tax</h4>
-                                    <div class="ml-auto font-weight-bold"> $ 2 </div>
+                                    <div class="ml-auto font-weight-bold">
+                                        <?php $tax = $row['price'] * 10 / 100;
+                                            echo $tax; ?>Rs/-</div>
                                 </div>
                                 <div class="d-flex">
                                     <h4>Shipping Cost</h4>
@@ -337,14 +326,25 @@
                                 <hr>
                                 <div class="d-flex gr-total">
                                     <h5>Grand Total</h5>
-                                    <div class="ml-auto h5"> $ 388 </div>
+
+                                    <div class="ml-auto h5"> <?php $total = $row['price'] + $tax;
+                                                                    echo $total; ?>Rs/- <input type="number"
+                                            value="<?php echo $total; ?>" id="total" name="total" hidden>
+                                        <input type="number" id="qty" name="qty" value="<?php echo $qty; ?>" hidden>
+                                        <input type="text" id="product_name" name="product_name" value="<?php echo $row['veg_name']; ?>" hidden>
+                                    </div>
+
                                 </div>
                                 <hr>
                             </div>
                         </div>
-                        <div class="col-12 d-flex shopping-box"> <a href="checkout.html"
-                                class="ml-auto btn hvr-hover">Place Order</a> </div>
+                        <?php } ?>
+                        <div class="col-12 d-flex shopping-box"> <button class="btn hvr-hover" data-fancybox-close=""
+                                style="color: white;font-weight: bold; padding: 9px 18px;" type="submit"
+                                name="place_order">Place Order</button>
+                        </div>
                     </div>
+                    </form>
                 </div>
             </div>
 
@@ -441,7 +441,7 @@
 
 
     <?php
-        include "include/footer.php";
+    include "include/footer.php";
     ?>
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -462,3 +462,98 @@
 </body>
 
 </html>
+<?php
+if (isset($_POST['place_order'])) {
+    $product_name=$_POST['product_name'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
+    $country = $_POST['country'];
+    $state = $_POST['state'];
+    $zip = $_POST['zip'];
+    $payment_method = $_POST['payment_method'];
+    $shipping_method = $_POST['shipping_method'];
+
+    if (!isset($first_name) || $first_name === '') {
+    ?>
+<script type="text/javascript">
+alert("Please Enter First Name.. ");
+</script>
+<?php
+
+    } elseif (!isset($last_name) || $last_name === '') {
+    ?>
+<script type="text/javascript">
+alert("Please Enter Last Name.. ");
+</script>
+<?php
+    }elseif (!isset($email) || $email === '') {
+    ?>
+<script type="text/javascript">
+alert("Please Enter Email.. ");
+</script>
+<?php
+    } elseif (!isset($address) || $address === '') {
+    ?>
+<script type="text/javascript">
+alert("Please Enter Address.. ");
+</script>
+<?php
+    } elseif (!isset($country) || $country === '') {
+    ?>
+<script type="text/javascript">
+alert("Please Enter Country.. ");
+</script>
+<?php
+    } elseif (!isset($state) || $state === '') {
+    ?>
+<script type="text/javascript">
+alert("Please Enter State.. ");
+</script>
+<?php
+    } elseif (!isset($zip) || $zip === '') {
+    ?>
+<script type="text/javascript">
+alert("Please Enter Zip Code.. ");
+</script>
+<?php
+    } elseif (!isset($payment_method) || $payment_method === '') {
+    ?>
+<script type="text/javascript">
+alert("Please Select Payment Method.. ");
+</script>
+<?php
+    } elseif (!isset($shipping_method) || $shipping_method === '') {
+    ?>
+<script type="text/javascript">
+alert("Please Select Shipping Method.. ");
+</script>
+<?php
+    } else {
+        $query = "INSERT INTO product_order (product_name,first_name,last_name,user_id,email,address,country,state,zip_code,payment_method,shipping_method,quantity,grand_total) VALUES ('$product_name','$first_name','$last_name','$username','$email','$address','$country','$state','$zip','$payment_method','$shipping_method','$qty','$total')";
+           echo $query;
+           exit();
+        $record = mysqli_query($conn, $query);
+
+        if ($record) {
+        ?>
+
+<script type="text/javascript">
+alert("Your Order Sucessfully..");
+window.location = "shop.php";
+</script>
+<?php
+
+        } else {
+        ?>
+
+<script type="text/javascript">
+alert("Have Some Issue..");
+window.location = "checkout.php?P_ID=<?php echo $id; ?>'";
+</script>
+<?php
+        }
+    }
+}
+?>

@@ -1,5 +1,9 @@
 <?php
-include "include/connect.php"
+include "include/connect.php";
+session_start();
+if (isset($_SESSION['User_ID'])) {
+    $username = $_SESSION['User_ID'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +67,7 @@ include "include/connect.php"
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Welcome To <br> SARUBAI AGRO FARMER</strong></h1>
-                            <p class="m-b-40">Grow What You Can Sale</p>
+                            <p class="m-b-40">FARMING IS NOT JUST A JOB ITS A WAY OF LIFE.</p>
                         </div>
                     </div>
                 </div>
@@ -147,8 +151,8 @@ include "include/connect.php"
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
                             <button class="active" data-filter="*">All</button>
-                            <button data-filter=".top-featured">Top featured</button>
-                            <button data-filter=".best-seller">Best seller</button>
+                            <button data-filter=".top-featured">Sale</button>
+                            <button data-filter=".best-seller">New</button>
                         </div>
                     </div>
                 </div>
@@ -161,33 +165,41 @@ include "include/connect.php"
 
                 while ($row = mysqli_fetch_array($result)) {
                 ?>
-                    <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="col-lg-3 col-md-6 special-grid <?php if ($row['status'] == "Sale") {
+                                                                    echo "top-featured";
+                                                                } else {
+                                                                    echo "best-seller";
+                                                                } ?>">
 
                         <div class="products-single fix">
 
                             <div class="box-img-hover">
 
                                 <div class="type-lb">
-                                    <p class="sale"><?php echo $row['status'] ?></p>
+                                    <p class="<?php if ($row['status'] == "Sale") {
+                                                    echo "sale";
+                                                } else {
+                                                    echo "new";
+                                                } ?>"><?php echo $row['status'] ?></p>
                                 </div>
 
                                 <img src="admin/<?php echo $row['photo'] ?>" style="height: 230px;" class="img-fluid" alt="Image">
 
                                 <div class="mask-icon">
-                                    <!-- <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                    <ul>
+                                    <li><a href="shop-detail.php?P_ID=<?php echo $row['id'] ?>" data-toggle="tooltip" data-placement="right" title="View"><i
                                                 class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i
-                                                class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right"
+                                    <li><a href="wishlist.php?P_ID=<?php echo $row['id'] ?>" data-toggle="tooltip" data-placement="right"
                                             title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul> -->
-                                    <!-- <a class="cart" href="#">Add to Cart</a> -->
+                                <a class="cart" href="#">Add to Cart</a>
                                 </div>
                             </div>
                             <div class="why-text">
-                                <h4><?php echo $row['veg_name'] ?></h4>
-                                <h5><?php echo $row['price'] ?>Rs/-</h5>
+                                <a href="shop-detail.php?P_ID=<?php echo $row['id'] ?>">
+                                    <h4><?php echo $row['veg_name'] ?></h4>
+                                    <h5><?php echo $row['price'] ?>Rs/-</h5>
+                                </a>
                             </div>
 
                         </div>

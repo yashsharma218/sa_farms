@@ -76,7 +76,7 @@
                                         </select>
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                    <select id="status" name="status"
+                                        <select id="status" name="status"
                                             class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
                                             <option value="<?php echo $row['status']?>">--Select Status--</option>
                                             <option value="New">New</option>
@@ -84,14 +84,31 @@
                                         </select>
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="sale_price"
+                                            value="<?php echo $row['sale_price']?>" name="sale_price" type="number" 
+                                            placeholder=" Sale Price" aria-label=" Sale Price">
+                                    </div><br>
+                                    <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="price"
                                             value="<?php echo $row['price']?>" name="price" type="number" required=""
                                             placeholder="Price" aria-label="Price">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="photo"
-                                            name="photo" required="" type="file" aria-label="Photo">
+                                        <select id="stock" name="stock"
+                                            class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
+                                            <option value="<?php echo $row['stock']?>">--Select
+                                                Stock--</option>
+                                            <option value="In Stock">In Stock</option>
+                                            <option value="Out of Stock">Out of Stock</option>
+                                        </select>
                                     </div><br>
+                                    <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+                                        <textarea class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
+                                            name="description" id="description"
+                                            placeholder="Short Description *  Descirption Should be less than 200 words"
+                                            cols="30" rows="5" required><?php echo $row['description']?></textarea>
+                                    </div><br>
+
                                     <?php } ?>
                                     <div>
                                         <button
@@ -126,11 +143,8 @@
         $category=$_POST['category'];
         $status=$_POST['status'];
         $price=$_POST['price'];
-
-        $source = $_FILES['photo']['tmp_name'];
-		$dest = "images/".$_FILES['photo']['name'];
-
-        	
+        $description=$_POST['description'];
+        $stock=$_POST['stock'];
 
         if (!isset($product_name) || $product_name === '') {
             ?>
@@ -160,9 +174,21 @@ alert("Please Select Status.. ");
 alert("Please Enter Price.. ");
 </script>
 <?php
+        }elseif (!isset($description) || $description === '') {
+            ?>
+<script type="text/javascript">
+alert("Please Enter Description.. ");
+</script>
+<?php
+        }elseif (!isset($stock) || $stock === '') {
+            ?>
+<script type="text/javascript">
+alert("Please Select Stock.. ");
+</script>
+<?php
         }
         else{
-       $query = "UPDATE product SET veg_name='$product_name', categories='$category', status= '$status', price='$price', photo='$dest' where id=$id";
+       $query = "UPDATE product SET veg_name='$product_name', categories='$category', status= '$status', price='$price',stock='$stock', description= '$description' where id=$id";
 
        $record = mysqli_query($conn, $query);
       

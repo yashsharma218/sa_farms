@@ -1,3 +1,10 @@
+<?php
+include "include/connect.php";
+session_start();
+if (isset($_SESSION['User_ID'])) {
+    $username = $_SESSION['User_ID'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -83,8 +90,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="service-block-inner">
                         <h3>We are Trusted</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. </p>
+                        <p>Our vegetable garden is coming along well, with radishes and beans up, and we are less worried about revolution that we used to be.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">

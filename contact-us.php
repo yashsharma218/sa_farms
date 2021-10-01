@@ -1,7 +1,10 @@
 <?php
-    include "include/connect.php";
+include "include/connect.php";
+session_start();
+if (isset($_SESSION['User_ID'])) {
+    $username = $_SESSION['User_ID'];
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
