@@ -45,8 +45,8 @@
                         href="user_registration.php">
                         Not registered Click Here?
                     </a><br>
-                    <a class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
-                        href="index.php">Skip Login..</a>
+                    <a class="inline-block right-0 align-baseline font-bold text-sm text-500 hover:text-blue-800"
+                        style="color: red;" href="index.php">Skip Login..</a>
                     </div>
                     
                 </form>
