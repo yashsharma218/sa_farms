@@ -1,12 +1,12 @@
 <?php
-    include "include/connect.php";
-    session_start();
+include "include/connect.php";
+session_start();
 
-    $username=$_SESSION['User_ID'];
+$username = $_SESSION['User_ID'];
 
-    if(!isset($username)){
-        header('location: login.php');
-    }
+if (!isset($username)) {
+    header('location: login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,13 +16,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords"
-        content="tailwind,tailwindcss,tailwind css,css,starter template,free template,admin templates, admin template, admin dashboard, free tailwind templates, tailwind example">
+    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,admin templates, admin template, admin dashboard, free tailwind templates, tailwind example">
     <!-- Css -->
     <link rel="stylesheet" href="./dist/styles.css">
     <link rel="stylesheet" href="./dist/all.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
-    <title>Dashboard | Tailwind Admin</title>
+    <title>SARUBAI AGRO FARMER HOME</title>
 </head>
 
 <body>
@@ -33,14 +32,14 @@
             <!--Header Section Starts Here-->
             <?php
             include "include/header.php";
-        ?>
+            ?>
             <!--/Header-->
 
             <div class="flex flex-1">
                 <!--Sidebar-->
                 <?php
-            include "include/sidebar.php";
-        ?>
+                include "include/sidebar.php";
+                ?>
                 <!--/Sidebar-->
                 <!--Main-->
                 <main class="bg-white-300 flex-1 p-3 overflow-hidden">
@@ -48,48 +47,75 @@
                     <div class="flex flex-col">
                         <!-- Stats Row Starts Here -->
                         <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
-                            <div
-                                class="shadow-lg bg-red-vibrant border-l-8 hover:bg-red-vibrant-dark border-red-vibrant-dark mb-2 p-2 md:w-1/4 mx-2">
+                            <div class="shadow-lg bg-red-vibrant border-l-8 hover:bg-red-vibrant-dark border-red-vibrant-dark mb-2 p-2 md:w-1/4 mx-2">
                                 <div class="p-4 flex flex-col">
+                                    <?php
+                                    $query = "select id from user";
+                                    $result = mysqli_query($conn, $query);
+                                    $total_user = 0;
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        $total_user++;
+                                    } ?>
                                     <a href="#" class="no-underline text-white text-2xl">
-                                        $244
+                                        <?php echo $total_user; ?>
                                     </a>
+                                    <a href="#" class="no-underline text-white text-lg">
+                                        Total User
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="shadow bg-info border-l-8 hover:bg-info-dark border-info-dark mb-2 p-2 md:w-1/4 mx-2">
+                                <div class="p-4 flex flex-col">
+                                    <?php
+                                    $query = "select grand_total from product_order";
+                                    $result = mysqli_query($conn, $query);
+                                    $total_order = 0;
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        $total_order++;
+                                    }
+                                    ?>
+                                    <a href="#" class="no-underline text-white text-2xl">
+                                        <?php echo $total_order; ?>
+                                    </a>
+                                    <a href="#" class="no-underline text-white text-lg">
+                                        Total Order
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="shadow bg-warning border-l-8 hover:bg-warning-dark border-warning-dark mb-2 p-2 md:w-1/4 mx-2">
+                                <div class="p-4 flex flex-col">
+                                    <?php
+                                    $query = "select grand_total from product_order";
+                                    $result = mysqli_query($conn, $query);
+                                    $total = 0;
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        $total = $total + $row['grand_total'];
+                                    ?>
+                                        <a href="#" class="no-underline text-white text-2xl">
+                                            <?php echo $total; ?> Rs/-
+                                        </a>
+                                    <?php } ?>
                                     <a href="#" class="no-underline text-white text-lg">
                                         Total Sales
                                     </a>
                                 </div>
                             </div>
 
-                            <div
-                                class="shadow bg-info border-l-8 hover:bg-info-dark border-info-dark mb-2 p-2 md:w-1/4 mx-2">
+                            <div class="shadow bg-success border-l-8 hover:bg-success-dark border-success-dark mb-2 p-2 md:w-1/4 mx-2">
                                 <div class="p-4 flex flex-col">
+                                    <?php
+                                    $query = "select id from product";
+                                    $result = mysqli_query($conn, $query);
+                                    $total_product = 0;
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        $total_product++;
+                                    } ?>
                                     <a href="#" class="no-underline text-white text-2xl">
-                                        $199.4
+                                        <?php echo $total_product; ?>
                                     </a>
-                                    <a href="#" class="no-underline text-white text-lg">
-                                        Total Cost
-                                    </a>
-                                </div>
-                            </div>
 
-                            <div
-                                class="shadow bg-warning border-l-8 hover:bg-warning-dark border-warning-dark mb-2 p-2 md:w-1/4 mx-2">
-                                <div class="p-4 flex flex-col">
-                                    <a href="#" class="no-underline text-white text-2xl">
-                                        900
-                                    </a>
-                                    <a href="#" class="no-underline text-white text-lg">
-                                        Total Users
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div
-                                class="shadow bg-success border-l-8 hover:bg-success-dark border-success-dark mb-2 p-2 md:w-1/4 mx-2">
-                                <div class="p-4 flex flex-col">
-                                    <a href="#" class="no-underline text-white text-2xl">
-                                        500
-                                    </a>
                                     <a href="#" class="no-underline text-white text-lg">
                                         Total Products
                                     </a>
@@ -106,83 +132,40 @@
 
                             <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
                                 <div class="px-6 py-2 border-b border-light-grey">
-                                    <div class="font-bold text-xl">Trending Categories</div>
+                                    <div class="font-bold text-xl">Contact Us List</div>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table text-grey-darkest">
                                         <thead class="bg-grey-dark text-white text-normal">
                                             <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Item</th>
-                                                <th scope="col">Last</th>
-                                                <th scope="col">Current</th>
-                                                <th scope="col">Change</th>
+                                                <th scope="col">Sr No.</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Subject</th>
+                                                <th scope="col">Message</th>
+                                                <th scope="col">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>
-                                                    <button
-                                                        class="bg-blue-500 hover:bg-blue-800 text-white font-light py-1 px-2 rounded-full">
-                                                        Twitter
-                                                    </button>
-                                                </td>
-                                                <td>4500</td>
-                                                <td>4600</td>
-                                                <td>
-                                                    <span class="text-green-500"><i
-                                                            class="fas fa-arrow-up"></i>5%</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>
-                                                    <button
-                                                        class="bg-primary hover:bg-primary-dark text-white font-light py-1 px-2 rounded-full">
-                                                        Facebook
-                                                    </button>
-                                                </td>
-                                                <td>10000</td>
-                                                <td>3000</td>
-                                                <td>
-                                                    <span class="text-red-500"><i
-                                                            class="fas fa-arrow-down"></i>65%</span>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>
-                                                    <button
-                                                        class="bg-success hover:bg-success-dark text-white font-light py-1 px-2 rounded-full">
-                                                        Amazon
-                                                    </button>
-                                                </td>
-                                                <td>10000</td>
-                                                <td>3000</td>
-                                                <td>
-                                                    <span class="text-red-500"><i
-                                                            class="fas fa-arrow-down"></i>65%</span>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <th scope="row">4</th>
-                                                <td>
-                                                    <button
-                                                        class="bg-blue-500 hover:bg-blue-800 text-white font-light py-1 px-2 rounded-full">
-                                                        Microsoft
-                                                    </button>
-                                                </td>
-                                                <td>10000</td>
-                                                <td>3000</td>
-                                                <td>
-                                                    <span class="text-green-500"><i
-                                                            class="fas fa-arrow-up"></i>65%</span>
-                                                </td>
-                                            </tr>
-
+                                            <?php
+                                            $query = "select * from contact_us";
+                                            $result = mysqli_query($conn, $query);
+                                            $srno = 0;
+                                            while ($row = mysqli_fetch_array($result)) {
+                                            ?>
+                                                <tr>
+                                                    <th scope="row"><?php echo ++$srno; ?></th>
+                                                    <td><?php echo $row['name']; ?></td>
+                                                    <td><?php echo $row['mail']; ?></td>
+                                                    <td><?php echo $row['subject']; ?></td>
+                                                    <td><?php echo $row['message']; ?></td>
+                                                    <td>
+                                                        <a href='delete_contact_us.php?C_ID=<?php echo $row['id'] ?>'><i class="fas fa-trash"></i></a>
+                                                    </td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -193,7 +176,7 @@
                         <!-- /Cards Section Ends Here -->
 
                         <!-- Progress Bar -->
-                        <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2 mt-2">
+                        <!-- <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2 mt-2">
                             <div class="rounded overflow-hidden shadow bg-white mx-2 w-full pt-2">
                                 <div class="px-6 py-2 border-b border-light-grey">
                                     <div class="font-bold text-xl">Progress Among Projects</div>
@@ -230,16 +213,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!--Profile Tabs-->
-                        <div
-                            class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2 p-1 mt-2 mx-auto lg:mx-2 md:mx-2 justify-between">
+                        <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2 p-1 mt-2 mx-auto lg:mx-2 md:mx-2 justify-between">
                             <!--Top user 1-->
                             <div class="rounded rounded-t-lg overflow-hidden shadow max-w-xs my-3">
                                 <img src="https://i.imgur.com/w1Bdydo.jpg" alt="" class="w-full" />
                                 <div class="flex justify-center -mt-8">
-                                    <img src="https://i.imgur.com/8Km9tLL.jpg" alt=""
-                                        class="rounded-full border-solid border-white border-2 -mt-3">
+                                    <img src="https://i.imgur.com/8Km9tLL.jpg" alt="" class="rounded-full border-solid border-white border-2 -mt-3">
                                 </div>
                                 <div class="text-center px-3 pb-6 pt-2">
                                     <h3 class="text-black text-sm bold font-sans">Olivia Dunham</h3>
@@ -261,8 +242,7 @@
                             <div class="rounded rounded-t-lg overflow-hidden shadow max-w-xs my-3">
                                 <img src="https://i.imgur.com/w1Bdydo.jpg" alt="" class="w-full" />
                                 <div class="flex justify-center -mt-8">
-                                    <img src="https://i.imgur.com/8Km9tLL.jpg" alt=""
-                                        class="rounded-full border-solid border-white border-2 -mt-3">
+                                    <img src="https://i.imgur.com/8Km9tLL.jpg" alt="" class="rounded-full border-solid border-white border-2 -mt-3">
                                 </div>
                                 <div class="text-center px-3 pb-6 pt-2">
                                     <h3 class="text-black text-sm bold font-sans">Olivia Dunham</h3>
@@ -285,8 +265,7 @@
                             <div class="rounded rounded-t-lg overflow-hidden shadow max-w-xs my-3">
                                 <img src="https://i.imgur.com/w1Bdydo.jpg" alt="" class="w-full" />
                                 <div class="flex justify-center -mt-8">
-                                    <img src="https://i.imgur.com/8Km9tLL.jpg" alt=""
-                                        class="rounded-full border-solid border-white border-2 -mt-3">
+                                    <img src="https://i.imgur.com/8Km9tLL.jpg" alt="" class="rounded-full border-solid border-white border-2 -mt-3">
                                 </div>
                                 <div class="text-center px-3 pb-6 pt-2">
                                     <h3 class="text-black text-sm bold font-sans">Olivia Dunham</h3>
@@ -313,7 +292,7 @@
             </div>
             <!--Footer-->
             <?php
-                include "include/footer.php";
+            include "include/footer.php";
             ?>
             <!--/footer-->
 

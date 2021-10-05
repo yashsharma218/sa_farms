@@ -90,14 +90,15 @@ if (isset($_SESSION['User_ID'])) {
                 <div class="col-sm-6 col-lg-4">
                     <div class="service-block-inner">
                         <h3>We are Trusted</h3>
-                        <p>Our vegetable garden is coming along well, with radishes and beans up, and we are less worried about revolution that we used to be.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="service-block-inner">
                         <h3>We are Professional</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. </p>
+                            labore et dolore magna aliqua.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">

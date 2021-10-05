@@ -532,8 +532,6 @@ alert("Please Select Shipping Method.. ");
 <?php
     } else {
         $query = "INSERT INTO product_order (product_name,first_name,last_name,user_id,email,address,country,state,zip_code,payment_method,shipping_method,quantity,grand_total) VALUES ('$product_name','$first_name','$last_name','$username','$email','$address','$country','$state','$zip','$payment_method','$shipping_method','$qty','$total')";
-           echo $query;
-           exit();
         $record = mysqli_query($conn, $query);
 
         if ($record) {
