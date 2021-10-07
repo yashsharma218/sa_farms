@@ -68,7 +68,6 @@ if (isset($_SESSION['User_ID'])) {
             <div class="row">
                 <div class="col-lg-6">
                     <div class="banner-frame">
-                        <h2 style="color: #007bff;"><b>Organizing Agri Culture </b></h2>
                         <img class="img-fluid" src="images/about-img.jpg" alt="" />
                         <br><br>
                     <p align="center" style="color: blue;">“FARMING IS NOT JUST A JOB ITS A WAY OF LIFE”</p>

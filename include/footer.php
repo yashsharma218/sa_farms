@@ -42,13 +42,10 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-widget">
-                        <h4>About Freshshop</h4>
+                        <h4>About Sarubai Agro Farmer</h4>
                         <p>We are a group of Famer families who came together to extend help to our food provider. Our
                             motto is to make farming activities profitable and enjoyable. We believe that long-term
                             sustainability is only possible with local empowerment. </p>
-                        <p>Exploring to move forward in the Agri sector with sustainability through a new technique like
-                            Contract farming, primary processing as per market need, and possible local implementation.
-                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
@@ -69,12 +66,13 @@
                     <div class="footer-link-contact">
                         <h4>Contact Us</h4>
                         <ul>
-                            <!-- <li>
-                                <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
-                            </li> -->
-                            <!-- <li>
-                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
-                            </li> -->
+                            <li>
+                                <p><i class="fas fa-map-marker-alt"></i>Address: Kumbhargaon, Tal-Karmala ,Dist- Solapur
+                                    Pin-43202 Maharashtra India</p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+91- 9356914171"> 9356914171</a>/<a href="tel:+91- 9011141321">9011141321</a></p>
+                            </li>
                             <li>
                                 <p><i class="fas fa-envelope"></i>Email: <a
                                         href="mailto:sarubaigro2021@gmail.com">sarubaigro2021@gmail.com</a></p>

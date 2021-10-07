@@ -92,7 +92,7 @@ if (isset($_SESSION['User_ID'])) {
     <!-- End Slider -->
 
     <!-- Start Categories  -->
-    <!-- <div class="categories-shop">
+    <div class="categories-shop">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -115,7 +115,7 @@ if (isset($_SESSION['User_ID'])) {
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- End Categories -->
 
     <div class="box-add-products">
@@ -136,13 +136,13 @@ if (isset($_SESSION['User_ID'])) {
     </div>
 
     <!-- Start Products  -->
-    <div class="products-box">
+    <!-- <div class="products-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
                         <h1>Fruits & Vegetables</h1>
-                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p> -->
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
                     </div>
                 </div>
             </div>
@@ -191,7 +191,7 @@ if (isset($_SESSION['User_ID'])) {
                                                 class="fas fa-eye"></i></a></li>
                                     <li><a href="wishlist.php?P_ID=<?php echo $row['id'] ?>" data-toggle="tooltip" data-placement="right"
                                             title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul> -->
+                                </ul>
                                 <a class="cart" href="#">Add to Cart</a>
                                 </div>
                             </div>
@@ -211,7 +211,7 @@ if (isset($_SESSION['User_ID'])) {
 
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Products  -->
 
     <!-- Start Blog  -->

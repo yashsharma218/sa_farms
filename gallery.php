@@ -77,7 +77,7 @@ if (isset($_SESSION['User_ID'])) {
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
                             <button class="active" data-filter="*">All</button>
-                            <button data-filter=".Dominant">Dominant Fruits</button>
+                            <button data-filter=".dominant_fruits">Dominant Fruits</button>
                             <button data-filter=".vegetable">Vegetable</button>
                             <button data-filter=".food_grain">Food Grain </button>
                             <button data-filter=".pulses">Pulses</button>
@@ -94,7 +94,7 @@ if (isset($_SESSION['User_ID'])) {
 
                 while ($row = mysqli_fetch_array($result)) {
                 ?>
-                <div class="col-lg-3 col-md-6 special-grid Dominant">
+                <div class="col-lg-3 col-md-6 special-grid <?php echo $row['category'] ?>">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <img src="admin/<?php echo $row['image'] ?>" style="height: 200px; width: 230px"
@@ -106,7 +106,7 @@ if (isset($_SESSION['User_ID'])) {
                                 </ul>
                             </div>
                         </div>
-                        <div class="why-text">
+                        <div class="why-text" align="center">
                             <h4><?php echo $row['name'] ?></h4>
                         </div>
                     </div>
@@ -116,6 +116,37 @@ if (isset($_SESSION['User_ID'])) {
         </div>
     </div>
     <!-- End Gallery  -->
+
+<hr>
+
+    <div class="about-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-frame">
+                        <img class="img-fluid" src="images/sales.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="noo-sh-title-top">SALES AND DISTRIBUTION</h2><br>
+                    <p> We ‘’SA FARMS” committed to safeguarding the interest of our ‘‘ अन्नदाता ” food provider and
+                        providing safe & quality food to our Consumer with due respect to the existing sales and
+                        distribution system in place.</p>
+                    <p>We are open to exploring business opportunities to Sale all types of Agriculture produce to our
+                        Rural & Urban communities with m.</p>
+                    <p>We can work on FARMER TO BUSINESS ( FB2B), FB2C, or B2 ‘I’ -individuals who distribute New Paper,
+                        Milk, etc. Small Kiran Shop Owner, Small or Mega Retail store, On-line sales. </p>
+                    <p>We have a plan to have Exclusive Shope & having Storage facility which will enhance our services
+                        to all the above Sales platforms in Urban areas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 
     <?php
     include "include/footer.php";
