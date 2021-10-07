@@ -10,9 +10,9 @@
                         <option>€ EUR</option>
                     </select>
                 </div> -->
-                <div class="right-phone-box">
+                <!-- <div class="right-phone-box">
                     <p>Email :- <a href="mailto:sarubaigro2021@gmail.com">sarubaigro2021@gmail.com</a></p>
-                </div>
+                </div> -->
                 <div class="our-link">
                     <ul>
                         <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
@@ -54,7 +54,12 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt=""></a>
+                <a class="navbar-brand" href="index.php" align="center">
+                    <img src="images/logo.png" style="height: 80px;  width: 80px; border-radius: 20px; color:white;"> 
+                    <!-- <big style="color: #ff210a;"> RA </big><small style="color: white;"> info solution</small> -->
+                    <span><p style="color: black; color:red;"><b>SARUBAI AGRO FARMER</b></p></span>
+                </a>
+                <!-- <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt=""></a> -->
             </div>
             <!-- End Header Navigation -->
 
@@ -75,7 +80,8 @@
                                     <li><a href="wishlist.php">Wishlist</a></li>
                                 </ul>
                             </li> -->
-                    <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.php">Food Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.php">Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
                     <?php
                     if (!isset($username) || $username === '') {

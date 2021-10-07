@@ -115,14 +115,12 @@ if (isset($_SESSION['User_ID'])) {
                             ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique
                             purus turpis. Maecenas vulputate. </p>
                         <ul>
-                            <!-- <li>
-                                <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 9000 <br>Preston Street
-                                    Wichita,<br> KS 87213 </p>
+                            <li>
+                                <p><i class="fas fa-map-marker-alt"></i>Address: Kumbhargaon, Tal-Karmala ,Dist- Solapur Pin-43202 Maharashtra India</p>
                             </li>
                             <li>
-                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705
-                                        770</a></p>
-                            </li> -->
+                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+91-9356914171">9356914171/</a><a href="tel:+91-9011141321">9011141321</a></p>
+                            </li>
                             <li>
                                 <p><i class="fas fa-envelope"></i>Email: <a
                                         href="mailto:sarubaigro2021@gmail.com">sarubaigro2021@gmail.com</a></p>

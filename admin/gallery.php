@@ -20,7 +20,7 @@ if (!isset($username)) {
     <link rel="stylesheet" href="./dist/styles.css">
     <link rel="stylesheet" href="./dist/all.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
-    <title>SARUBAI AGRO FARMER GALLERY</title>
+    <title>SARUBAI AGRO FARMER FOOD GALLERY</title>
 </head>
 
 <body>
@@ -50,7 +50,7 @@ if (!isset($username)) {
                         <div class="mb-2 md:mx-2 lg:mx-2 border-solid border-gray-200 rounded border shadow-sm w-full md:w-1/2 lg:w-1/2">
                             <br>
                             <div class="font-bold text-xl">
-                                &nbsp;&nbsp; Add Your Gallery Image
+                                &nbsp;&nbsp; Add Your Food Gallery Image
                             </div>
                             <div class="p-3">
                                 <form class="w-full" method="POST" enctype="multipart/form-data">
@@ -59,6 +59,16 @@ if (!isset($username)) {
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="image" name="image" type="file" required="" aria-label="Image">
+                                    </div><br>
+                                    <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+                                        <select id="category" name="category"
+                                            class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
+                                            <option value="dominant_fruits">Dominant Fruits</option>
+                                            <option value="vegetable">Vegetable</option>
+                                            <option value="food_grain">Food Grain </option>
+                                            <option value="pulses">Pulses</option>
+                                            <option value="spices">Spices</option>
+                                        </select>
                                     </div><br>
                                     <div>
                                         <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit" name="add_image">Add Image</button>
@@ -80,7 +90,7 @@ if (!isset($username)) {
 
                             <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
                                 <div class="px-6 py-2 border-b border-light-grey">
-                                    <div class="font-bold text-xl">Gallery Image List</div>
+                                    <div class="font-bold text-xl">FOOD Gallery Image List</div>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table text-grey-darkest">
@@ -142,6 +152,7 @@ if (!isset($username)) {
 <?php
 if (isset($_POST['add_image'])) {
     $name = $_POST['name'];
+    $category=$_POST['category'];
     $source = $_FILES['image']['tmp_name'];
     $dest = "images/" . $_FILES['image']['name'];
 
@@ -157,8 +168,14 @@ if (isset($_POST['add_image'])) {
                 alert("Please Enter Name.. ");
             </script>
             <?php
-        } else {
-            $query = "INSERT INTO gallery VALUES ('','$dest','$name')";
+        }elseif (!isset($category) || $category === '') {
+            ?>
+                        <script type="text/javascript">
+                            alert("Please Select Category.. ");
+                        </script>
+                        <?php
+                    } else {
+            $query = "INSERT INTO gallery VALUES ('','$dest','$name','$category')";
             $record = mysqli_query($conn, $query);
 
             if ($record) {

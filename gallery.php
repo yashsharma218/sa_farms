@@ -17,7 +17,7 @@ if (isset($_SESSION['User_ID'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>SARUBAI AGRO FARMER GALLERY</title>
+    <title>SARUBAI AGRO FARMER FOOD GALLERY</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -51,10 +51,10 @@ if (isset($_SESSION['User_ID'])) {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Services</h2>
+                    <h2>Food Gallery</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                        <li class="breadcrumb-item active">Services</li>
+                        <li class="breadcrumb-item active">Food Gallery</li>
                     </ul>
                 </div>
             </div>
@@ -68,23 +68,24 @@ if (isset($_SESSION['User_ID'])) {
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                        <h1>Our Gallery</h1>
+                        <h1>Food Gallery</h1>
                     </div>
                 </div>
             </div>
-            <!-- <div class="row">
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
                             <button class="active" data-filter="*">All</button>
-                            <button data-filter=".bulbs">Bulbs</button>
-                            <button data-filter=".fruits">Fruits</button>
-                         <button data-filter=".podded-vegetables">Podded vegetables</button>
-                            <button data-filter=".root-and-tuberous">Root and tuberous</button>
+                            <button data-filter=".Dominant">Dominant Fruits</button>
+                            <button data-filter=".vegetable">Vegetable</button>
+                            <button data-filter=".food_grain">Food Grain </button>
+                            <button data-filter=".pulses">Pulses</button>
+                            <button data-filter=".spices">Spices</button>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <div class="row special-list">
                 <?php
@@ -93,10 +94,11 @@ if (isset($_SESSION['User_ID'])) {
 
                 while ($row = mysqli_fetch_array($result)) {
                 ?>
-                <div class="col-lg-3 col-md-6 special-grid fruits">
+                <div class="col-lg-3 col-md-6 special-grid Dominant">
                     <div class="products-single fix">
                         <div class="box-img-hover">
-                            <img src="admin/<?php echo $row['image'] ?>" class="img-fluid" alt="Image">
+                            <img src="admin/<?php echo $row['image'] ?>" style="height: 200px; width: 230px"
+                                class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right"
@@ -114,94 +116,6 @@ if (isset($_SESSION['User_ID'])) {
         </div>
     </div>
     <!-- End Gallery  -->
-
-    <!-- Start Instagram Feed 
-    <div class="instagram-box">
-        <div class="main-instagram owl-carousel owl-theme">
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-01.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-02.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-03.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-04.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-06.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-07.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-08.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-09.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- End Instagram Feed  -->
-
 
     <?php
     include "include/footer.php";
