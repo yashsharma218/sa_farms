@@ -127,8 +127,8 @@ if (isset($_SESSION['User_ID'])) {
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <textarea class="form-control" id="message" name="message"
-                                            placeholder="Describe Enquiry in Short *" rows="4" data-error="Write your message"
-                                            required></textarea>
+                                            placeholder="Describe Enquiry in Short *" rows="4"
+                                            data-error="Write your message" required></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="submit-button text-center">
@@ -143,19 +143,23 @@ if (isset($_SESSION['User_ID'])) {
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-12">
-                <div class="banner-frame">
+                    <div class="banner-frame">
                         <h2 class="noo-sh-title-top">FEEDBACK</h2>
-                        <p>We welcome you as our prospect Partners and Consumers to give us your input, ideas that are valuable on Journey just begun…</p>
-                        <p>This is a farmer organization  & We are  Learning to manage our Indian Agri Culture.</p>
-                        <p>This will help to prepare ourself to adopt marked trend and  accommodate  diversified need our Food System.</p>
+                        <p>We welcome you as our prospect Partners and Consumers to give us your input, ideas that are
+                            valuable on Journey just begun…</p>
+                        <p>This is a farmer organization & We are Learning to manage our Indian Agri Culture.</p>
+                        <p>This will help to prepare ourself to adopt marked trend and accommodate diversified need our
+                            Food System.</p>
                     </div><br>
                     <div class="contact-info-left">
                         <h2>CONTACT INFO</h2>
                         <p><b>SARUBAI AGRO FARMER PRODUCER COMPANY LIMITED</b></p>
                         <ul>
                             <li>
-                                <p><i class="fas fa-map-marker-alt"></i>Address: Kumbhargaon, Tal-Karmala ,Dist- Solapur
-                                    Pin-43202 Maharashtra India</p>
+                                <p><i class="fas fa-map-marker-alt"></i>Address: Kumbhargaon Tal-Karmala Dist-Solapur
+                                    Pin-413203
+                                    Maharashtra INDIA.
+                                </p>
                             </li>
                             <li>
                                 <p><i class="fas fa-phone-square"></i>Phone: <a
@@ -164,7 +168,7 @@ if (isset($_SESSION['User_ID'])) {
                             </li>
                             <li>
                                 <p><i class="fas fa-envelope"></i>Email: <a
-                                        href="mailto:sarubaigro2021@gmail.com">sarubaigro2021@gmail.com</a></p>
+                                        href="mailto:sarubaiagro2021@gmail.com">sarubaiagro2021@gmail.com</a></p>
                             </li>
                         </ul>
                     </div>

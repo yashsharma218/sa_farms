@@ -27,13 +27,13 @@
                     <div class="footer-top-box">
                         <h3>Social Media</h3><br>
                         <ul>
-                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            <li><a href="#" target="blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" target="blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#" target="blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="#" target="blank"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                            <li><a href="#" target="blank"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                            <li><a href="#" target="blank"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                            <li><a href="#" target="blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -67,15 +67,18 @@
                         <h4>Contact Us</h4>
                         <ul>
                             <li>
-                                <p><i class="fas fa-map-marker-alt"></i>Address: Kumbhargaon, Tal-Karmala ,Dist- Solapur
-                                    Pin-43202 Maharashtra India</p>
+                                <p><i class="fas fa-map-marker-alt"></i>Address: Kumbhargaon Tal-Karmala Dist-Solapur
+                                    Pin-413203
+                                    Maharashtra INDIA.
+                                </p>
                             </li>
                             <li>
-                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+91- 9356914171"> 9356914171</a>/<a href="tel:+91- 9011141321">9011141321</a></p>
+                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+91- 9356914171">
+                                        9356914171</a>/<a href="tel:+91- 9011141321">9011141321</a></p>
                             </li>
                             <li>
                                 <p><i class="fas fa-envelope"></i>Email: <a
-                                        href="mailto:sarubaigro2021@gmail.com">sarubaigro2021@gmail.com</a></p>
+                                        href="mailto:sarubaiagro2021@gmail.com">sarubaiagro2021@gmail.com</a></p>
                             </li>
                         </ul>
                     </div>

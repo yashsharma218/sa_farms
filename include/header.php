@@ -3,13 +3,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="custom-select-box">
-                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-                        <option>India</option>
-                    </select>
-                </div>
                 <div class="right-phone-box">
-                    <p>Email :- <a href="mailto:sarubaigro2021@gmail.com">sarubaigro2021@gmail.com</a></p>
+                    <p>Email :- <a href="mailto:sarubaiagro2021@gmail.com">sarubaiagro2021@gmail.com</a></p>
                 </div>
                 <div class="our-link">
                     <ul>
