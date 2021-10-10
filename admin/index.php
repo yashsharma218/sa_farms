@@ -92,11 +92,11 @@ if (!isset($username)) {
                                     $total = 0;
                                     while ($row = mysqli_fetch_array($result)) {
                                         $total = $total + $row['grand_total'];
+                                    }
                                     ?>
-                                        <a href="#" class="no-underline text-white text-2xl">
-                                            <?php echo $total; ?> Rs/-
-                                        </a>
-                                    <?php } ?>
+                                    <a href="#" class="no-underline text-white text-2xl">
+                                        <?php echo $total; ?> Rs/-
+                                    </a>
                                     <a href="#" class="no-underline text-white text-lg">
                                         Total Sales
                                     </a>

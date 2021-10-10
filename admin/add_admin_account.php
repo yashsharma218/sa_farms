@@ -20,7 +20,7 @@ if (!isset($username)) {
     <link rel="stylesheet" href="./dist/styles.css">
     <link rel="stylesheet" href="./dist/all.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
-    <title>SARUBAI AGRO FARMER FOOD GALLERY</title>
+    <title>SARUBAI AGRO FARMER ADMIN ADD ACCOUNT</title>
 </head>
 
 <body>
@@ -50,31 +50,25 @@ if (!isset($username)) {
                         <div class="mb-2 md:mx-2 lg:mx-2 border-solid border-gray-200 rounded border shadow-sm w-full md:w-1/2 lg:w-1/2">
                             <br>
                             <div class="font-bold text-xl">
-                                &nbsp;&nbsp; Add Your Food Gallery Image
+                                &nbsp;&nbsp; Add Admin Account
                             </div>
                             <div class="p-3">
                                 <form class="w-full" method="POST" enctype="multipart/form-data">
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="name" name="name" type="text" required="" placeholder="Image Name *" aria-label="Image Name">
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="name" name="name" type="text" required="" placeholder="Full Name *" aria-label="Full Name">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <select id="category" name="category" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
-                                            <option value="">--Select Category--</option>
-                                            <option value="dominant_fruits">Dominant Fruits</option>
-                                            <option value="vegetable">Vegetable</option>
-                                            <option value="food_grain">Food Grain </option>
-                                            <option value="pulses">Pulses</option>
-                                            <option value="spices">Spices</option>
-                                        </select>
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="username" name="username" type="text" required="" placeholder="Username *" aria-label="Username">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <textarea class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="description" name="description" type="text" placeholder="Description" rows="3" aria-label="Description"></textarea>
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="password" name="password" type="password" required="" placeholder="Password *" aria-label="Password">
                                     </div><br>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="image" name="image" type="file" required="" aria-label="Image">
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="c_password" name="c_password" type="password" required="" placeholder="Confirm Password *" aria-label="Confirm Password">
                                     </div><br>
+
                                     <div>
-                                        <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit" name="add_image">Add Image</button>
+                                        <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit" name="register">Ragister</button>
                                     </div>
                                 </form>
                             </div>
@@ -82,7 +76,7 @@ if (!isset($username)) {
 
 
 
-                        <!-- <hr class="border-t mx-2 border-grey-ligght"><br> -->
+                        <hr class="border-t mx-2 border-grey-ligght"><br>
 
 
 
@@ -93,7 +87,7 @@ if (!isset($username)) {
 
                             <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
                                 <div class="px-6 py-2 border-b border-light-grey">
-                                    <div class="font-bold text-xl">FOOD Gallery Image List</div>
+                                    <div class="font-bold text-xl">Admin List</div>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table text-grey-darkest">
@@ -101,46 +95,27 @@ if (!isset($username)) {
                                             <tr>
                                                 <th scope="col">Sr No.</th>
                                                 <th scope="col">Name</th>
-                                                <th scope="col">Category</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">Image</th>
+                                                <th scope="col">User ID</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $query = "select * from gallery";
+                                            $query = "select * from admin";
                                             $result = mysqli_query($conn, $query);
                                             $srno = 0;
                                             while ($row = mysqli_fetch_array($result)) {
                                             ?>
-                                                <tr>
-                                                    <th scope="row"><?php echo ++$srno; ?></th>
-                                                    <td><?php echo $row['name']; ?></td>
-                                                    <td><?php if ($row['category'] == "dominant_fruits") {
-                                                            echo "Dominant Fruits";
-                                                        } elseif ($row['category'] == "vegetable") {
-                                                            echo "Vegetable";
-                                                        } elseif ($row['category'] == "food_grain") {
-                                                            echo "Food Grain";
-                                                        } elseif ($row['category'] == "pulses") {
-                                                            echo "Pulses";
-                                                        } else {
-                                                            echo "Spices";
-                                                        } ?></td>
-                                                    <td><?php if ($row['description'] == "") {
-                                                            echo "No Description";
-                                                        } else {
-                                                            echo $row['description'];
-                                                        } ?></td>
-                                                    <td><img style="border-radius:50%!important; height:60px; width:60px;" src="<?php echo $row['image']; ?>" alt="Image"></td>
-                                                    <td>
-                                                        <a href='update_gallery.php?G_ID=<?php echo $row['id'] ?>'><i class="fas fa-edit"></i></a>
-                                                        <a href='delete_gallery.php?G_ID=<?php echo $row['id'] ?>'><i class="fas fa-trash"></i></a>
-                                                    </td>
-                                                </tr>
+                                                    <tr>
+                                                        <th scope="row"><?php echo ++$srno; ?></th>
+                                                        <td><?php echo $row['name']; ?></td>
+                                                        <td><?php echo $row['username']; ?></td>
+                                                        <td>
+                                                            <a href='delete_admin.php?A_ID=<?php echo $row['id'] ?>'><i class="fas fa-trash"></i> Remove Admin</a>
+                                                        </td>
+                                                    </tr>
                                             <?php
-                                            }
+                                                }
                                             ?>
                                         </tbody>
                                     </table>
@@ -172,41 +147,44 @@ if (!isset($username)) {
 </html>
 
 <?php
-if (isset($_POST['add_image'])) {
+if (isset($_POST['register'])) {
     $name = $_POST['name'];
-    $description = $_POST['description'];
-    $category = $_POST['category'];
-    $source = $_FILES['image']['tmp_name'];
-    $dest = "images/" . $_FILES['image']['name'];
-
-    if (!move_uploaded_file($source, $dest)) {
-        echo "<script>alert('Select Photo')</script>";
-    } else {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $c_password = $_POST['c_password'];
 
 
+    if ($password == $c_password) {
 
         if (!isset($name) || $name === '') {
 ?>
             <script type="text/javascript">
-                alert("Please Enter Name.. ");
+                alert("Please Enter Admin Name.. ");
             </script>
         <?php
-        } elseif (!isset($category) || $category === '') {
+        } elseif (!isset($username) || $username === '') {
         ?>
             <script type="text/javascript">
-                alert("Please Select Category.. ");
+                alert("Please Enter Admin Username.. ");
+            </script>
+        <?php
+
+        } elseif (!isset($password) || $password === '') {
+        ?>
+            <script type="text/javascript">
+                alert("Please Enter Password.. ");
             </script>
             <?php
         } else {
-            $query = "INSERT INTO gallery VALUES ('','$dest','$name','$category','$description')";
+            $query = "INSERT INTO admin VALUES ('','$name','$username','$password')";
             $record = mysqli_query($conn, $query);
 
             if ($record) {
             ?>
 
                 <script type="text/javascript">
-                    alert("Your Image Add");
-                    window.location = "gallery.php";
+                    alert("Admin Account Creat");
+                    window.location = "add_admin_account.php";
                 </script>
             <?php
 
@@ -215,11 +193,19 @@ if (isset($_POST['add_image'])) {
 
                 <script type="text/javascript">
                     alert("Have Some Issue..");
-                    window.location = "gallery.php";
+                    window.location = "add_admin_account.php";
                 </script>
-<?php
+        <?php
             }
         }
+    } else {
+        ?>
+
+        <script type="text/javascript">
+            alert("Password Do not Match..");
+            window.location = "add_admin_account.php";
+        </script>
+<?php
     }
 }
 ?>
