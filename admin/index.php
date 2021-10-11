@@ -50,7 +50,7 @@ if (!isset($username)) {
                             <div class="shadow-lg bg-red-vibrant border-l-8 hover:bg-red-vibrant-dark border-red-vibrant-dark mb-2 p-2 md:w-1/4 mx-2">
                                 <div class="p-4 flex flex-col">
                                     <?php
-                                    $query = "select id from user";
+                                    $query = "select id from contact_us";
                                     $result = mysqli_query($conn, $query);
                                     $total_user = 0;
                                     while ($row = mysqli_fetch_array($result)) {
@@ -60,7 +60,7 @@ if (!isset($username)) {
                                         <?php echo $total_user; ?>
                                     </a>
                                     <a href="#" class="no-underline text-white text-lg">
-                                        Total User
+                                        Total Request
                                     </a>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@ if (!isset($username)) {
                             <div class="shadow bg-info border-l-8 hover:bg-info-dark border-info-dark mb-2 p-2 md:w-1/4 mx-2">
                                 <div class="p-4 flex flex-col">
                                     <?php
-                                    $query = "select grand_total from product_order";
+                                    $query = "select id from offer";
                                     $result = mysqli_query($conn, $query);
                                     $total_order = 0;
                                     while ($row = mysqli_fetch_array($result)) {
@@ -79,34 +79,14 @@ if (!isset($username)) {
                                         <?php echo $total_order; ?>
                                     </a>
                                     <a href="#" class="no-underline text-white text-lg">
-                                        Total Order
+                                        Total Offer
                                     </a>
                                 </div>
                             </div>
-
-                            <div class="shadow bg-warning border-l-8 hover:bg-warning-dark border-warning-dark mb-2 p-2 md:w-1/4 mx-2">
-                                <div class="p-4 flex flex-col">
-                                    <?php
-                                    $query = "select grand_total from product_order";
-                                    $result = mysqli_query($conn, $query);
-                                    $total = 0;
-                                    while ($row = mysqli_fetch_array($result)) {
-                                        $total = $total + $row['grand_total'];
-                                    }
-                                    ?>
-                                    <a href="#" class="no-underline text-white text-2xl">
-                                        <?php echo $total; ?> Rs/-
-                                    </a>
-                                    <a href="#" class="no-underline text-white text-lg">
-                                        Total Sales
-                                    </a>
-                                </div>
-                            </div>
-
                             <div class="shadow bg-success border-l-8 hover:bg-success-dark border-success-dark mb-2 p-2 md:w-1/4 mx-2">
                                 <div class="p-4 flex flex-col">
                                     <?php
-                                    $query = "select id from product";
+                                    $query = "select id from gallery";
                                     $result = mysqli_query($conn, $query);
                                     $total_product = 0;
                                     while ($row = mysqli_fetch_array($result)) {
@@ -118,6 +98,24 @@ if (!isset($username)) {
 
                                     <a href="#" class="no-underline text-white text-lg">
                                         Total Products
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="shadow bg-warning border-l-8 hover:bg-warning-dark border-warning-dark mb-2 p-2 md:w-1/4 mx-2">
+                                <div class="p-4 flex flex-col">
+                                    <?php
+                                    $query = "select grand_total from product_order";
+                                    $result = mysqli_query($conn, $query);
+                                    $total = 0;
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        $total = $total + $row['grand_total'];
+                                    }
+                                    ?>
+                                    <a href="#" class="no-underline text-white text-2xl">
+                                        
+                                    </a>
+                                    <a href="#" class="no-underline text-white text-lg">
+                                        Blank
                                     </a>
                                 </div>
                             </div>

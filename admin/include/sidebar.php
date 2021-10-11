@@ -49,13 +49,13 @@
             </a>
         </li>
         <li class="w-full h-full py-3 px-2 border-b border-light-border">
-            <a href="user_list.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+            <a href="change_user_name.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                 <i class="fa fa-user-secret float-left mx-2"></i>
                 Change User Name
             </a>
         </li>
         <li class="w-full h-full py-3 px-2 border-b border-light-border">
-            <a href="user_list.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+            <a href="change_password.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                 <i class="fa fa-unlock float-left mx-2"></i>
                 Change Password
             </a>
