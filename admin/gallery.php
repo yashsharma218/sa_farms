@@ -54,9 +54,15 @@ if (!isset($username)) {
                             </div>
                             <div class="p-3">
                                 <form class="w-full" method="POST" enctype="multipart/form-data">
+                                    <div class="flex items-center py-2">
+                                        Product Name <em style="color: red;">&nbsp;*</em>
+                                    </div>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="name" name="name" type="text" required="" placeholder="Image Name *" aria-label="Image Name">
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="name" name="name" type="text" required="" placeholder="Product Name" aria-label="Product Name">
                                     </div><br>
+                                    <div class="flex items-center py-2">
+                                        Category <em style="color: red;">&nbsp;*</em>
+                                    </div>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <select id="category" name="category" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
                                             <option value="">--Select Category--</option>
@@ -67,9 +73,15 @@ if (!isset($username)) {
                                             <option value="spices">Spices</option>
                                         </select>
                                     </div><br>
+                                    <div class="flex items-center py-2">
+                                        Description <em style="color: red;">&nbsp;*</em>
+                                    </div>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <textarea class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="description" name="description" type="text" placeholder="Description" rows="3" aria-label="Description"></textarea>
                                     </div><br>
+                                    <div class="flex items-center py-2">
+                                        Product Image <em style="color: red;">&nbsp;*</em>
+                                    </div>
                                     <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
                                         <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="image" name="image" type="file" required="" aria-label="Image">
                                     </div><br>

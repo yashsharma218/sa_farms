@@ -30,9 +30,7 @@
                             <li><a href="#" target="blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                             <li><a href="#" target="blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
                             <li><a href="#" target="blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="#" target="blank"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
-                            <li><a href="#" target="blank"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                            <li><a href="#" target="blank"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                            <li><a href="#" target="blank"><i class="fab fa-google" aria-hidden="true"></i></a></li>
                             <li><a href="#" target="blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
@@ -87,7 +85,7 @@
         </div>
     </div>
 </footer>
-<!-- End Footer  -->
+<!-- End Footer  --> 
 
 <!-- Start copyright  -->
 <div class="footer-copyright">
@@ -101,4 +99,4 @@
 </div>
 <!-- End copyright  -->
 
-<a href="#" id="back-to-top" title="Back to top" style="display: none; padding-top: 10px;">&uarr;</a>
+<a href="#" id="back-to-top" title="Back to top" style="padding-top: 10px;">&uarr;</a>

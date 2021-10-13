@@ -106,16 +106,16 @@ if (!isset($username)) {
                                             $srno = 0;
                                             while ($row = mysqli_fetch_array($result)) {
                                             ?>
-                                                    <tr>
-                                                        <th scope="row"><?php echo ++$srno; ?></th>
-                                                        <td><?php echo $row['name']; ?></td>
-                                                        <td><?php echo $row['username']; ?></td>
-                                                        <td>
-                                                            <a href='delete_admin.php?A_ID=<?php echo $row['id'] ?>'><i class="fas fa-trash"></i> Remove Admin</a>
-                                                        </td>
-                                                    </tr>
+                                                <tr>
+                                                    <th scope="row"><?php echo ++$srno; ?></th>
+                                                    <td><?php echo $row['name']; ?></td>
+                                                    <td><?php echo $row['username']; ?></td>
+                                                    <td>
+                                                        <a href='delete_admin.php?A_ID=<?php echo $row['id'] ?>'><i class="fas fa-trash"></i> Remove Admin</a>
+                                                    </td>
+                                                </tr>
                                             <?php
-                                                }
+                                            }
                                             ?>
                                         </tbody>
                                     </table>
@@ -153,59 +153,78 @@ if (isset($_POST['register'])) {
     $password = $_POST['password'];
     $c_password = $_POST['c_password'];
 
+    $query = "select username from admin";
+    $result = mysqli_query($conn, $query);
+    while ($row = mysqli_fetch_array($result)) {
 
-    if ($password == $c_password) {
-
-        if (!isset($name) || $name === '') {
-?>
-            <script type="text/javascript">
-                alert("Please Enter Admin Name.. ");
-            </script>
-        <?php
-        } elseif (!isset($username) || $username === '') {
-        ?>
-            <script type="text/javascript">
-                alert("Please Enter Admin Username.. ");
-            </script>
-        <?php
-
-        } elseif (!isset($password) || $password === '') {
-        ?>
-            <script type="text/javascript">
-                alert("Please Enter Password.. ");
-            </script>
-            <?php
-        } else {
-            $query = "INSERT INTO admin VALUES ('','$name','$username','$password')";
-            $record = mysqli_query($conn, $query);
-
-            if ($record) {
-            ?>
-
-                <script type="text/javascript">
-                    alert("Admin Account Creat");
-                    window.location = "add_admin_account.php";
-                </script>
-            <?php
-
-            } else {
-            ?>
-
-                <script type="text/javascript">
-                    alert("Have Some Issue..");
-                    window.location = "add_admin_account.php";
-                </script>
-        <?php
-            }
+        if ($row['username'] == $username) {
+            $account++;
         }
-    } else {
+    }
+
+    if ($account == 0) {
+        if ($password == $c_password) {
+
+            if (!isset($name) || $name === '') {
+?>
+                <script type="text/javascript">
+                    alert("Please Enter Admin Name.. ");
+                </script>
+            <?php
+            } elseif (!isset($username) || $username === '') {
+            ?>
+                <script type="text/javascript">
+                    alert("Please Enter Admin Username.. ");
+                </script>
+            <?php
+
+            } elseif (!isset($password) || $password === '') {
+            ?>
+                <script type="text/javascript">
+                    alert("Please Enter Password.. ");
+                </script>
+                <?php
+            } else {
+                $query = "INSERT INTO admin VALUES ('','$name','$username','$password')";
+                $record = mysqli_query($conn, $query);
+
+                if ($record) {
+                ?>
+
+                    <script type="text/javascript">
+                        alert("Admin Account Create");
+                        window.location = "add_admin_account.php";
+                    </script>
+                <?php
+
+                } else {
+                ?>
+
+                    <script type="text/javascript">
+                        alert("Have Some Issue..");
+                        window.location = "add_admin_account.php";
+                    </script>
+            <?php
+                }
+            }
+        } else {
+            ?>
+
+            <script type="text/javascript">
+                alert("Password Do not Match..");
+                window.location = "add_admin_account.php";
+            </script>
+<?php
+        }
+    }else{
         ?>
 
-        <script type="text/javascript">
-            alert("Password Do not Match..");
-            window.location = "add_admin_account.php";
-        </script>
+            <script type="text/javascript">
+                alert("User already exist, Please Chnage Your User ID..");
+                window.location = "add_admin_account.php";
+            </script>
 <?php
     }
 }
+
 ?>

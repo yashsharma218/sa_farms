@@ -17,7 +17,8 @@ $id = $_GET['G_ID'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,admin templates, admin template, admin dashboard, free tailwind templates, tailwind example">
+    <meta name="keywords"
+        content="tailwind,tailwindcss,tailwind css,css,starter template,free template,admin templates, admin template, admin dashboard, free tailwind templates, tailwind example">
     <!-- Css -->
     <link rel="stylesheet" href="./dist/styles.css">
     <link rel="stylesheet" href="./dist/all.css">
@@ -46,10 +47,11 @@ $id = $_GET['G_ID'];
                 <main class="bg-white-300 flex-1 p-3 overflow-hidden">
 
                     <div class="flex flex-col">
-                        <div class="mb-2 md:mx-2 lg:mx-2 border-solid border-gray-200 rounded border shadow-sm w-full md:w-1/2 lg:w-1/2">
+                        <div
+                            class="mb-2 md:mx-2 lg:mx-2 border-solid border-gray-200 rounded border shadow-sm w-full md:w-1/2 lg:w-1/2">
                             <br>
                             <div class="font-bold text-xl">
-                                &nbsp;&nbsp; Update Product
+                                &nbsp;&nbsp; Update Your Food Gallery Image
                             </div>
                             <div class="p-3">
                                 <form class="w-full" method="POST" enctype="multipart/form-data">
@@ -59,30 +61,52 @@ $id = $_GET['G_ID'];
 
                                     while ($row = mysqli_fetch_array($result)) {
                                     ?>
-                                        <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                            <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="name" name="name" type="text" required="" placeholder="Image Name *" aria-label="Image Name" value="<?php echo $row['name'] ?>">
-                                        </div><br>
-                                        <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                            <select id="category" name="category" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
-                                                <option value="<?php echo $row['category'] ?>">--Select Category--</option>
-                                                <option value="dominant_fruits">Dominant Fruits</option>
-                                                <option value="vegetable">Vegetable</option>
-                                                <option value="food_grain">Food Grain </option>
-                                                <option value="pulses">Pulses</option>
-                                                <option value="spices">Spices</option>
-                                            </select>
-                                        </div><br>
-                                        <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                            <textarea class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="description" name="description" type="text" placeholder="Description" rows="3" aria-label="Description"><?php echo $row['description'] ?></textarea>
-                                        </div><br>
-                                        <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
-                                            <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="image" name="image" type="file" aria-label="Image">
+                                    <div class="flex items-center py-2">
+                                        Product Name <em style="color: red;">&nbsp;*</em>
+                                    </div>
+                                    <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="name"
+                                            name="name" type="text" required="" placeholder="Image Name *"
+                                            aria-label="Image Name" value="<?php echo $row['name'] ?>">
+                                    </div><br>
+                                    <div class="flex items-center py-2">
+                                        Category <em style="color: red;">&nbsp;*</em>
+                                    </div>
+                                    <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+                                        <select id="category" name="category"
+                                            class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded">
+                                            <option value="<?php echo $row['category'] ?>">--Select Category--</option>
+                                            <option value="dominant_fruits">Dominant Fruits</option>
+                                            <option value="vegetable">Vegetable</option>
+                                            <option value="food_grain">Food Grain </option>
+                                            <option value="pulses">Pulses</option>
+                                            <option value="spices">Spices</option>
+                                        </select>
+                                    </div><br>
+                                    <div class="flex items-center py-2">
+                                        Description <em style="color: red;">&nbsp;*</em>
+                                    </div>
+                                    <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+                                        <textarea class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
+                                            id="description" name="description" type="text" placeholder="Description"
+                                            rows="3"
+                                            aria-label="Description"><?php echo $row['description'] ?></textarea>
+                                    </div><br>
+                                    <div class="flex items-center py-2">
+                                        Product Image <em style="color: red;">&nbsp;*</em>
+                                    </div>
+                                    <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+                                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="image"
+                                            name="image" type="file" aria-label="Image">
 
-                                            <img style="border-radius:50%!important; height:60px; width:60px;" src="<?php echo $row['image']; ?>" alt="Image">
-                                        </div><br>
+                                        <img style="border-radius:50%!important; height:60px; width:60px;"
+                                            src="<?php echo $row['image']; ?>" alt="Image">
+                                    </div><br>
                                     <?php } ?>
                                     <div>
-                                        <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit" name="update_offer">Update Details</button>
+                                        <button
+                                            class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
+                                            type="submit" name="update_offer">Update Details</button>
                                     </div>
                                 </form>
                             </div>
@@ -121,16 +145,16 @@ if (isset($_POST['update_offer'])) {
 
         if (!isset($name) || $name === '') {
 ?>
-            <script type="text/javascript">
-                alert("Please Enter Name.. ");
-            </script>
-        <?php
+<script type="text/javascript">
+alert("Please Enter Name.. ");
+</script>
+<?php
         } elseif (!isset($category) || $category === '') {
         ?>
-            <script type="text/javascript">
-                alert("Please Select Category.. ");
-            </script>
-            <?php
+<script type="text/javascript">
+alert("Please Select Category.. ");
+</script>
+<?php
         } else {
             $query = "UPDATE gallery SET name='$name',category='$category', description='$description' where id=$id";
             $record = mysqli_query($conn, $query);
@@ -138,20 +162,20 @@ if (isset($_POST['update_offer'])) {
             if ($record) {
             ?>
 
-                <script type="text/javascript">
-                    alert("Your Image Details Update..");
-                    window.location = "gallery.php";
-                </script>
-            <?php
+<script type="text/javascript">
+alert("Your Image Details Update..");
+window.location = "gallery.php";
+</script>
+<?php
 
             } else {
             ?>
 
-                <script type="text/javascript">
-                    alert("Have Some Issue..");
-                    window.location = "gallery.php";
-                </script>
-            <?php
+<script type="text/javascript">
+alert("Have Some Issue..");
+window.location = "gallery.php";
+</script>
+<?php
             }
         }
     } else {
@@ -163,16 +187,16 @@ if (isset($_POST['update_offer'])) {
         } else {
             if (!isset($name) || $name === '') {
             ?>
-                <script type="text/javascript">
-                    alert("Please Enter Name.. ");
-                </script>
-            <?php
+<script type="text/javascript">
+alert("Please Enter Name.. ");
+</script>
+<?php
             } elseif (!isset($category) || $category === '') {
             ?>
-                <script type="text/javascript">
-                    alert("Please Select Category.. ");
-                </script>
-                <?php
+<script type="text/javascript">
+alert("Please Select Category.. ");
+</script>
+<?php
             } else {
                 $query = "UPDATE gallery SET name='$name',category='$category', description='$description', image ='$dest' where id=$id";
                 $record = mysqli_query($conn, $query);
@@ -180,19 +204,19 @@ if (isset($_POST['update_offer'])) {
                 if ($record) {
                 ?>
 
-                    <script type="text/javascript">
-                        alert("Your Image Details Update..");
-                        window.location = "gallery.php";
-                    </script>
-                <?php
+<script type="text/javascript">
+alert("Your Image Details Update..");
+window.location = "gallery.php";
+</script>
+<?php
 
                 } else {
                 ?>
 
-                    <script type="text/javascript">
-                        alert("Have Some Issue..");
-                        window.location = "gallery.php";
-                    </script>
+<script type="text/javascript">
+alert("Have Some Issue..");
+window.location = "gallery.php";
+</script>
 <?php
                 }
             }

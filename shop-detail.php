@@ -55,10 +55,10 @@ $id = $_GET['P_ID'];
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Shop Detail</h2>
+                    <h2>Product Detail</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="shop.php">Shop</a></li>
-                        <li class="breadcrumb-item active">Shop Detail </li>
+                        <li class="breadcrumb-item"><a href="gallery.php">Gallery</a></li>
+                        <li class="breadcrumb-item active">Product Detail </li>
                     </ul>
                 </div>
             </div>
@@ -73,14 +73,14 @@ $id = $_GET['P_ID'];
                 <div class="col-xl-5 col-lg-5 col-md-6">
                     <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
                         <?php
-                        $query = "select * from product where id=$id";
+                        $query = "select * from gallery where id=$id";
                         $result = mysqli_query($conn, $query);
 
                         while ($row = mysqli_fetch_array($result)) {
                         ?>
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active"> <img class="d-block w-100"
-                                    src="admin/<?php echo $row['photo'] ?>" alt="First slide"> </div>
+                                    src="admin/<?php echo $row['image'] ?>" alt="First slide"> </div>
                         </div>
                         <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev">
                             <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -93,14 +93,16 @@ $id = $_GET['P_ID'];
                     </div>
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-6">
-                    <form action="checkout.php?P_ID=<?php echo $id; ?>" method="POST">
                     <div class="single-product-details">
-                        <h2><?php echo $row['veg_name'] ?></h2>
-                        <h5> <del>$ 60.00</del><?php echo $row['price'] ?>Rs/-</h5>
+                        <h2><?php echo $row['name'] ?></h2>
                         <p>
                         <h4>Short Description:</h4>
-                        <p><?php echo $row['description'] ?></p>
-                        <ul>
+                        <p><?php if ($row['description'] == "") {
+                                                echo "No Description";
+                                            } else {
+                                                echo $row['description'];
+                                            } ?></p>
+                        <!-- <ul>
                             <li>
                                 <div class="form-group quantity-box">
                                     <label class="control-label">Quantity</label>
@@ -108,9 +110,9 @@ $id = $_GET['P_ID'];
                                         type="number">
                                 </div>
                             </li>
-                        </ul>
+                        </ul> -->
 
-                        <div class="price-box-bar">
+                        <!-- <div class="price-box-bar">
                             <div class="cart-and-bay-btn">
                                 <?php if ($row['stock'] == 'In Stock') { ?>
                                     <button class="btn hvr-hover" data-fancybox-close="" style="color: white;font-weight: bold; padding: 9px 18px;" type="submit">Buy Now</button>
@@ -124,21 +126,20 @@ $id = $_GET['P_ID'];
                                         style="color: red; font-size:20px;"><b><?php echo $row['stock'] ?></b></a></span>
                                     <?php } ?>
                             </div>
-                        </div>
-                        </form>
+                        </div> -->
 
-                        <div class="add-to-btn">
+                        <!-- <div class="add-to-btn">
                             <div class="add-comp">
                                 <a class="btn hvr-hover" href="#"><i class="fas fa-heart"></i> Add to wishlist</a>
                             </div>
-                            <!-- <div class="share-bar">
+                            <div class="share-bar">
                                 <a class="btn hvr-hover" href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
                                 <a class="btn hvr-hover" href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
                                 <a class="btn hvr-hover" href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                                 <a class="btn hvr-hover" href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
                                 <a class="btn hvr-hover" href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                            </div> -->
-                        </div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
                 <?php
@@ -179,7 +180,7 @@ $id = $_GET['P_ID'];
                     </div>
                     <div class="featured-products-box owl-carousel owl-theme">
                         <?php
-                        $query = "select * from product";
+                        $query = "select * from gallery";
                         $result = mysqli_query($conn, $query);
 
                         while ($row = mysqli_fetch_array($result)) {
@@ -187,30 +188,18 @@ $id = $_GET['P_ID'];
                         <div class="item">
                             <div class="products-single fix">
                                 <div class="box-img-hover">
-                                    <div class="type-lb">
-                                        <p class="<?php if ($row['status'] == "Sale") {
-                                                            echo "sale";
-                                                        } else {
-                                                            echo "new";
-                                                        } ?>">
-                                            <?php echo $row['status'] ?></p>
-                                    </div>
-                                    <img src="admin/<?php echo $row['photo'] ?>" style="height: 230px;"
+                                    <img src="admin/<?php echo $row['image'] ?>" style="height: 230px;"
                                         class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
-                                                        class="fas fa-eye"></i></a></li>
                                             <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                     title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                         </ul>
-                                        <a class="cart" href="#">Add to Cart</a>
                                     </div>
                                 </div>
                                 <div class="why-text">
                                     <a href="shop-detail.php?P_ID=<?php echo $row['id'] ?>">
-                                        <h4><?php echo $row['veg_name'] ?></h4>
-                                        <h5><?php echo $row['price'] ?>Rs/-</h5>
+                                        <h4><?php echo $row['name'] ?></h4>
                                     </a>
                                 </div>
                             </div>

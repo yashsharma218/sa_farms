@@ -138,9 +138,12 @@ if (!isset($username)) {
                                             <tr>
                                                 <th scope="col">Sr No.</th>
                                                 <th scope="col">Name</th>
-                                                <th scope="col">Email</th>
-                                                <th scope="col">Subject</th>
-                                                <th scope="col">Message</th>
+                                                <th scope="col">Gender</th>
+                                                <th scope="col">Number</th>
+                                                <th scope="col">Address</th>
+                                                <th scope="col">Requirement</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Status</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
@@ -154,9 +157,12 @@ if (!isset($username)) {
                                                 <tr>
                                                     <th scope="row"><?php echo ++$srno; ?></th>
                                                     <td><?php echo $row['name']; ?></td>
-                                                    <td><?php echo $row['mail']; ?></td>
-                                                    <td><?php echo $row['subject']; ?></td>
-                                                    <td><?php echo $row['message']; ?></td>
+                                                    <td><?php echo $row['gender']; ?></td>
+                                                    <td><?php echo $row['number']; ?></td>
+                                                    <td><?php echo $row['address']; ?>&nbsp;<?php echo $row['pincode']; ?></td>
+                                                    <td><?php echo $row['requirement']; ?></td>
+                                                    <td><?php echo $row['description']; ?></td>
+                                                    <td><a href="status_contact_us.php?C_ID=<?php echo $row['id'] ?>" style="color: blue;"><?php echo $row['status']; ?></a></td>
                                                     <td>
                                                         <a href='delete_contact_us.php?C_ID=<?php echo $row['id'] ?>'><i class="fas fa-trash"></i></a>
                                                     </td>
@@ -213,8 +219,8 @@ if (!isset($username)) {
                             </div>
                         </div> -->
                         <!--Profile Tabs-->
-                        <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2 p-1 mt-2 mx-auto lg:mx-2 md:mx-2 justify-between">
-                            <!--Top user 1-->
+                        <!-- <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2 p-1 mt-2 mx-auto lg:mx-2 md:mx-2 justify-between">
+                            Top user 1
                             <div class="rounded rounded-t-lg overflow-hidden shadow max-w-xs my-3">
                                 <img src="https://i.imgur.com/w1Bdydo.jpg" alt="" class="w-full" />
                                 <div class="flex justify-center -mt-8">
@@ -236,7 +242,7 @@ if (!isset($username)) {
                                     </div>
                                 </div>
                             </div>
-                            <!--Top user 2-->
+                            Top user 2
                             <div class="rounded rounded-t-lg overflow-hidden shadow max-w-xs my-3">
                                 <img src="https://i.imgur.com/w1Bdydo.jpg" alt="" class="w-full" />
                                 <div class="flex justify-center -mt-8">
@@ -259,7 +265,7 @@ if (!isset($username)) {
                                     </div>
                                 </div>
                             </div>
-                            <!--Top user 3-->
+                            Top user 3
                             <div class="rounded rounded-t-lg overflow-hidden shadow max-w-xs my-3">
                                 <img src="https://i.imgur.com/w1Bdydo.jpg" alt="" class="w-full" />
                                 <div class="flex justify-center -mt-8">
@@ -282,7 +288,7 @@ if (!isset($username)) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!--/Profile Tabs-->
                     </div>
                 </main>

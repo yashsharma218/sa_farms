@@ -97,7 +97,7 @@ if (isset($_SESSION['User_ID'])) {
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="message" name="message"
+                                        <textarea class="form-control" id="address" name="address"
                                             placeholder="Address *" rows="2" data-error="Write your Address"
                                             required></textarea>
                                         <div class="help-block with-errors"></div>
@@ -112,7 +112,7 @@ if (isset($_SESSION['User_ID'])) {
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <select id="gender" name="gender" class="form-control">
+                                        <select id="requirement" name="requirement" class="form-control">
                                             <option value="">--Select Requirement--</option>
                                             <option value="Grain">Grain</option>
                                             <option value="Fruits">Fruits</option>
@@ -126,7 +126,7 @@ if (isset($_SESSION['User_ID'])) {
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="message" name="message"
+                                        <textarea class="form-control" id="description" name="description"
                                             placeholder="Describe Enquiry in Short *" rows="4"
                                             data-error="Write your message" required></textarea>
                                         <div class="help-block with-errors"></div>
@@ -293,28 +293,34 @@ if (isset($_SESSION['User_ID'])) {
 <?php
     if(isset($_POST['submit'])){
         $name=$_POST['name'];
-        $email=$_POST['email'];
-        $subject=$_POST['subject'];
-        $message=$_POST['message'];
+        $gender=$_POST['gender'];
+        $number=$_POST['number'];
+        $address=$_POST['address'];
+        $pincode=$_POST['pincode'];
+        $requirement=$_POST['requirement'];
+        $description=$_POST['description'];
 
         if(!isset($name) || $name === ''){
-            
             echo"<script>alert ('Please Enter Name..');</script>";
-        }
-        elseif(!isset($email)|| $email === ''){
+        }elseif(!isset($gender)|| $gender === ''){
             echo"<script>alert ('Please Enter E-mail..');</script>";
-        }
-        elseif(!isset($subject)|| $subject === ''){
+        }elseif(!isset($number)|| $number === ''){
             echo"<script>alert ('Please Enter Subject..');</script>";
-        }
-        elseif(!isset($message)|| $message === ''){
+        }elseif(!isset($address)|| $address === ''){
+            echo"<script>alert ('Please Enter Message..');</script>";
+        }elseif(!isset($pincode)|| $pincode === ''){
+            echo"<script>alert ('Please Enter Message..');</script>";
+        }elseif(!isset($requirement)|| $requirement === ''){
+            echo"<script>alert ('Please Enter Message..');</script>";
+        }elseif(!isset($description)|| $description === ''){
             echo"<script>alert ('Please Enter Message..');</script>";
         }else{
-            $query="insert into contact_us values('','$name','$email','$subject','$message')";
+            $query="insert into contact_us(name,gender,number,address,pincode,requirement,description) values('$name','$gender','$number','$address','$pincode','$requirement','$description')";
+            
             $result=mysqli_query($conn, $query);
 
             if($result){
-                echo"<script>alert('Your Message Sent..');
+                echo"<script>alert('Your Enquiry Sent..');
                 window.location.replace('contact-us.php');</script>";
             }else{
                 echo"<script>alert('Your Message not Sent..');

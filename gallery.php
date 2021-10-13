@@ -34,6 +34,7 @@ if (isset($_SESSION['User_ID'])) {
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/popup.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -107,7 +108,7 @@ if (isset($_SESSION['User_ID'])) {
                             </div>
                         </div>
                         <div class="why-text" align="center">
-                            <h4><?php echo $row['name'] ?></h4>
+                            <a href="shop-detail.php?P_ID=<?php echo $row['id'] ?>"><h4><?php echo $row['name'] ?></h4></a>
                         </div>
                     </div>
                 </div>
@@ -117,7 +118,7 @@ if (isset($_SESSION['User_ID'])) {
     </div>
     <!-- End Gallery  -->
 
-<hr>
+    <hr>
 
     <div class="about-box-main">
         <div class="container">

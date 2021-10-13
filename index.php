@@ -98,19 +98,19 @@ if (isset($_SESSION['User_ID'])) {
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="images/categories_img_01.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                        <!-- <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="images/categories_img_02.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                        <!-- <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="images/categories_img_03.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                        <!-- <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a> -->
                     </div>
                 </div>
             </div>
@@ -123,96 +123,17 @@ if (isset($_SESSION['User_ID'])) {
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="offer-box-products">
-                        <img class="img-fluid" src="images/add-img-01.jpg" alt="" />
+                        <img class="img-fluid" style="height: 350px; width:100%" src="images/add-img-01.jpg" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="offer-box-products">
-                        <img class="img-fluid" src="images/add-img-02.jpg" alt="" />
+                        <img class="img-fluid" style="height: 350px; width:100%" src="images/add-img-02.jpg" alt="" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Start Products  -->
-    <!-- <div class="products-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>Fruits & Vegetables</h1>
-                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".top-featured">Sale</button>
-                            <button data-filter=".best-seller">New</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row special-list">
-                <?php
-                $query = "select * from product";
-                $result = mysqli_query($conn, $query);
-
-                while ($row = mysqli_fetch_array($result)) {
-                ?>
-                    <div class="col-lg-3 col-md-6 special-grid <?php if ($row['status'] == "Sale") {
-                                                                    echo "top-featured";
-                                                                } else {
-                                                                    echo "best-seller";
-                                                                } ?>">
-
-                        <div class="products-single fix">
-
-                            <div class="box-img-hover">
-
-                                <div class="type-lb">
-                                    <p class="<?php if ($row['status'] == "Sale") {
-                                                    echo "sale";
-                                                } else {
-                                                    echo "new";
-                                                } ?>"><?php echo $row['status'] ?></p>
-                                </div>
-
-                                <img src="admin/<?php echo $row['photo'] ?>" style="height: 230px;" class="img-fluid" alt="Image">
-
-                                <div class="mask-icon">
-                                    <ul>
-                                    <li><a href="shop-detail.php?P_ID=<?php echo $row['id'] ?>" data-toggle="tooltip" data-placement="right" title="View"><i
-                                                class="fas fa-eye"></i></a></li>
-                                    <li><a href="wishlist.php?P_ID=<?php echo $row['id'] ?>" data-toggle="tooltip" data-placement="right"
-                                            title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                                </div>
-                            </div>
-                            <div class="why-text">
-                                <a href="shop-detail.php?P_ID=<?php echo $row['id'] ?>">
-                                    <h4><?php echo $row['veg_name'] ?></h4>
-                                    <h5><?php echo $row['price'] ?>Rs/-</h5>
-                                </a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                <?php
-                }
-                ?>
-
-            </div>
-        </div>
-    </div> -->
-    <!-- End Products  -->
 
     <!-- Start Blog  -->
     <div class="latest-blog">

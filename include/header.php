@@ -3,9 +3,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="right-phone-box">
-                    <p>Email :- <a href="mailto:sarubaiagro2021@gmail.com">sarubaiagro2021@gmail.com</a></p>
-                </div>
                 <div class="our-link">
                     <ul>
                         <!-- <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li> -->
@@ -14,7 +11,11 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="text-slid-box">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <div class="text-slid-box">
                     <div id="offer-box" class="carouselTicker">
                         <ul class="offer-box">
