@@ -54,16 +54,20 @@
         $_SESSION['User_ID'] = $User_ID;
         $sql = "select username, password from admin";
         $result= mysqli_query($conn, $sql);
-          while ($row = mysqli_fetch_array($result)) {
-             if ($User_ID==$row['username'] & $Password==$row['password']){                                    
-                   header("location: index.php");                                           
-              }else{
-              ?>
-<script type="text/javascript">
-alert("Incorrect Username and Password..");
-</script>
-<?php
-                                    }
-                                    }
+        $login=0;
+        while ($row = mysqli_fetch_array($result)) {
+            if ($User_ID == $row['username'] & $Password == $row['password']) {
+                $login++;
+            }
+        }
+        if ($login == 1) {
+            header("location: index.php");
+        } else {
+    ?>
+            <script>
+                alert('Incorrect Username and Password..');
+            </script>
+    <?php
+        }
                                     }
                                 ?>
