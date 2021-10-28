@@ -77,7 +77,7 @@ if (isset($_SESSION['User_ID'])) {
                             </div>
                             <ul class="social">
                                 <li>
-                                    <a href="#" target="blank" class="fab fa-facebook"></a>
+                                    <a href="https://www.facebook.com/balnath.pawar/" target="blank" class="fab fa-facebook"></a>
                                 </li>
                                 <!-- <li>
                                     <a href="#" target="blank" class="fab fa-twitter"></a>
