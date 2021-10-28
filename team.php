@@ -39,12 +39,11 @@ if (isset($_SESSION['User_ID'])) {
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body>
-    <?php 
-        include "include/header.php";
+    <?php
+    include "include/header.php";
     ?>
     <!-- Start All Title Box -->
     <div class="all-title-box">
@@ -71,325 +70,219 @@ if (isset($_SESSION['User_ID'])) {
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Balnath Pawar</h3> <span class="post">MD & Chairmen</span>
+                        <div class="our-team"> <img src="images/team1.jpg"
+                                alt="Your Browser Does not Support this Image.." />
+                            <div class="">
+                                <h3 class="title">Balnath Pawar</h3>
                             </div>
                             <ul class="social">
                                 <li>
-                                    <a href="#" class="fab fa-facebook"></a>
+                                    <a href="#" target="blank" class="fab fa-facebook"></a>
+                                </li>
+                                <!-- <li>
+                                    <a href="#" target="blank" class="fab fa-twitter"></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
+                                    <a href="#" target="blank" class="fab fa-google"></a>
+                                </li> -->
                             </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <p>I always remember my mother's word during my childhood that you should do Job but no
-                                Farming, but it was always love and affection that kept me connected with Farmers being
-                                born in Farmer Family. The time spent during school days and close experience of Farmer
-                                life which is still not easy to live because it always with full of challenges.
-                                I have the opportunity to spend a long time during the Corona pandemic with our Farmers,
-                                family members, friends, relatives, and people who are totally engaged at Farm and some
-                                of them move out of Farming activities. These all have in-depth connect & lovely bonding
-                                which give them joy, happiness, and satisfaction in their life.
-                                I am born a Farmer and will always want to remain a proud Farmer. There are a lot of
-                                challenges & opportunities in this sector. It inspires me to start this business.
-                                We have begun this journey to give back to society as much as we can. This is our true,
-                                sincere and honest effort to organize our Agri Culture.
-                            </p>
                         </div>
                         <hr class="my-0">
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-2.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Surekha Pawar</h3> <span class="post">Director Managing Pulses and Spices.</span>
-                            </div>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="fab fa-facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
-                            </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <p>To manage the kitchen is always a challenge for every Homer Maker because of what food
-                                grain and fruit we eat whether has been grown, processed, and packed in the right
-                                hygienic manner. The nutritional are intact. In the food industry, only brands and
-                                packing can’t give assurance of quality safe foods.
-                                We being self producer & all our farms are managed under close observation of expert
-                                team. These all food grains are authenticated.
-                                We give this assurance because we use our traditional seeds that are not genetically
-                                modified
-                                . </p>
-                        </div>
-                        <hr class="my-0">
+                <div class="col-sm-6 col-lg-9">
+                    <div>
+                        <h1 class="title"><b>MD & Chairmen</b></h1>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I always remember my mother's word during my childhood that you should do Job but no
+                            Farming, but it was always love and affection that kept me connected with Farmers being
+                            born in Farmer Family. The time spent during school days and close experience of Farmer
+                            life which is still not easy to live because it always with full of challenges.
+                            I have the opportunity to spend a long time during the Corona pandemic with our Farmers,
+                            family members, friends, relatives, and people who are totally engaged at Farm and some
+                            of them move out of Farming activities. These all have in-depth connect & lovely bonding
+                            which give them joy, happiness, and satisfaction in their life.
+                            I am born a Farmer and will always want to remain a proud Farmer. There are a lot of
+                            challenges & opportunities in this sector. It inspires me to start this business.
+                            We have begun this journey to give back to society as much as we can. This is our true,
+                            sincere and honest effort to organize our Agri Culture.
+                        </span>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-3.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Bapusaheb Katule</h3> <span class="post">Director Finance & Managing  Fruit portfolio </span>
+                        <div class="our-team"><br><br> <img src="images/team3.jpg"
+                                alt="Your Browser Does not Support this Image.." />
+                            <div class="">
+                                <h3 class="title">Surekha Pawar</h3>
                             </div>
                             <ul class="social">
                                 <li>
-                                    <a href="#" class="fab fa-facebook"></a>
+                                    <a href="#" target="blank" class="fab fa-facebook"></a>
+                                </li>
+                                <!-- <li>
+                                    <a href="#" target="blank" class="fab fa-twitter"></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
+                                    <a href="#" target="blank" class="fab fa-google"></a>
+                                </li> -->
                             </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <p>I urge to all younger farmer generation please don’t go behind job let us start together something on our own related to agriculture which is the open market has a lot of opportunities to work with. This will not only give own satisfaction but will add happiness to others life. </p>
                         </div>
                         <hr class="my-0">
                     </div>
                 </div>
+                <div class="col-sm-6 col-lg-9">
+                    <div><br>
+                        <h1 class="title"><b>Director Managing Pulses and Spices</b></h1>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To manage the kitchen is always a challenge for every Homer Maker because of what food
+                            grain and fruit we eat whether has been grown, processed, and packed in the right hygienic
+                            manner. The nutritional are intact. In the food industry, only brands and packing can’t give
+                            assurance of quality safe foods.
+                            We being self producer & all our farms are managed under close observation of expert team.
+                            These all food grains are authenticated.
+                            We give this assurance because we use our traditional seeds that are not genetically
+                            modified.
+
+                        </span>
+                    </div>
+                </div>
+
+
+
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Changdev Kolapkar</h3> <span class="post">Director  (Guidance, Training & Support).</span>
+                        <div class="our-team"><br><br> <img src="images/team2.jpg"
+                                alt="Your Browser Does not Support this Image.." />
+                            <div class="">
+                                <h3 class="title">Bapusaheb Katule</h3>
                             </div>
                             <ul class="social">
                                 <li>
-                                    <a href="#" class="fab fa-facebook"></a>
+                                    <a href="#" target="blank" class="fab fa-facebook"></a>
+                                </li>
+                                <!-- <li>
+                                    <a href="#" target="blank" class="fab fa-twitter"></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
+                                    <a href="#" target="blank" class="fab fa-google"></a>
+                                </li> -->
                             </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <p>There are two main enemies in farming that have become more challenging present situation  Nature and Agri Worker.  Our team will help you to overcome this. We should use modern equipment and advance techniques in farming. We have to upgrade ourselves to cope with this situation. </p>
                         </div>
                         <hr class="my-0">
                     </div>
                 </div>
+                <div class="col-sm-6 col-lg-9">
+                    <div><br>
+                        <h1 class="title"><b>Director Finance & Managing Fruit portfolio</b></h1>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I urge to all younger farmer generation please don’t go behind job let us start together
+                            something on our own related to agriculture which is the open market has a lot of
+                            opportunities to work with. This will not only give own satisfaction but will add happiness
+                            to others life.
+
+                        </span>
+                    </div>
+                </div>
+
+
+
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Neminath Sarde</h3> <span class="post">Director Farmer relationship & Government Co-ordination.</span>
+                        <div class="our-team"><br><br> <img src="images/img-1.jpg"
+                                alt="Your Browser Does not Support this Image.." />
+                            <div class="">
+                                <h3 class="title">Dadasaheb Katule</h3>
                             </div>
                             <ul class="social">
                                 <li>
-                                    <a href="#" class="fab fa-facebook"></a>
+                                    <a href="#" target="blank" class="fab fa-facebook"></a>
+                                </li>
+                                <!-- <li>
+                                    <a href="#" target="blank" class="fab fa-twitter"></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
+                                    <a href="#" target="blank" class="fab fa-google"></a>
+                                </li> -->
                             </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <p>We as Farmer always have an effort to grow our crop to get maximum yield, but when we go to market we absolutely have no control over selling prices. We never kept a record of the expenditure we had and the profit we have earned.
-We should keep a record of our farming as a business what in and out to measure the profitability of each crop. 
- </p>
                         </div>
                         <hr class="my-0">
                     </div>
                 </div>
+                <div class="col-sm-6 col-lg-9">
+                    <div><br><br>
+                        <h1 class="title"><b>Director Retail and Distribution</b></h1>
+                        <span>
+                        </span>
+                    </div>
+                </div>
+
+
+
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Shridhar Pawar</h3> <span class="post">Director  Managing Onion  portfolio , Procurment of Food Grain</span>
+                        <div class="our-team"><br><br> <img src="images/img-3.jpg"
+                                alt="Your Browser Does not Support this Image.." />
+                            <div class="">
+                                <h3 class="title">Shridhar Pawar</h3>
                             </div>
                             <ul class="social">
                                 <li>
-                                    <a href="#" class="fab fa-facebook"></a>
+                                    <a href="#" target="blank" class="fab fa-facebook"></a>
+                                </li>
+                                <!-- <li>
+                                    <a href="#" target="blank" class="fab fa-twitter"></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
+                                    <a href="#" target="blank" class="fab fa-google"></a>
+                                </li> -->
                             </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <!-- <p>We as Farmer always have an effort to grow our crop to get maximum yield, but when we go to market we absolutely have no control over selling prices. We never kept a record of the expenditure we had and the profit we have earned.
-We should keep a record of our farming as a business what in and out to measure the profitability of each crop. 
- </p> -->
                         </div>
                         <hr class="my-0">
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Pravin Sarde</h3> <span class="post">Director Administration & Customer Relationship.</span>
-                            </div>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="fab fa-facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
-                            </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <!-- <p>We as Farmer always have an effort to grow our crop to get maximum yield, but when we go to market we absolutely have no control over selling prices. We never kept a record of the expenditure we had and the profit we have earned.
-We should keep a record of our farming as a business what in and out to measure the profitability of each crop. 
- </p> -->
-                        </div>
-                        <hr class="my-0">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Dadasaheb Katule-</h3> <span class="post">Director Retail and Distribution</span>
-                            </div>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="fab fa-facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
-                            </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <!-- <p>We as Farmer always have an effort to grow our crop to get maximum yield, but when we go to market we absolutely have no control over selling prices. We never kept a record of the expenditure we had and the profit we have earned.
-We should keep a record of our farming as a business what in and out to measure the profitability of each crop. 
- </p> -->
-                        </div>
-                        <hr class="my-0">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Reshma Rakhunde</h3> <span class="post">CSR & Resource Management</span>
-                            </div>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="fab fa-facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
-                            </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <!-- <p>We as Farmer always have an effort to grow our crop to get maximum yield, but when we go to market we absolutely have no control over selling prices. We never kept a record of the expenditure we had and the profit we have earned.
-We should keep a record of our farming as a business what in and out to measure the profitability of each crop. 
- </p> -->
-                        </div>
-                        <hr class="my-0">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Bapusaheb khule</h3> <span class="post">Director</span>
-                            </div>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="fab fa-facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
-                            </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <!-- <p>We as Farmer always have an effort to grow our crop to get maximum yield, but when we go to market we absolutely have no control over selling prices. We never kept a record of the expenditure we had and the profit we have earned.
-We should keep a record of our farming as a business what in and out to measure the profitability of each crop. 
- </p> -->
-                        </div>
-                        <hr class="my-0">
+                <div class="col-sm-6 col-lg-9">
+                    <div><br><br>
+                        <h1 class="title"><b>Director Managing Onion portfolio , Procurment of Food Grain</b></h1>
+                        <span>
+                        </span>
                     </div>
                 </div>
             </div>
+            <div class=""><br>
+                <h3 class="title"><b>Changdev Kolapkar</b></h3>
+                <p><b>Director (Guidance, Training & Support)</b>:-There are two main enemies in farming that have
+                    become more challenging present situation Nature and Agri Worker. Our team will help you to overcome
+                    this. We should use modern equipment and advance techniques in farming. We have to upgrade ourselves
+                    to cope with this situation.</p>
+            </div>
+            <div class=""><br>
+                <h3 class="title"><b>Neminath Sarde</b></h3>
+                <p><b>Director Farmer relationship & Government Co-ordination</b>:-We as Farmer always have an effort to
+                    grow our crop to get maximum yield, but when we go to market we absolutely have no control over
+                    selling prices. We never kept a record of the expenditure we had and the profit we have earned. <br>
+                    We should keep a record of our farming as a business what in and out to measure the profitability of
+                    each crop.
+                </p>
+            </div>
+            <div class=""><br>
+                <h3 class="title"><b>Pravin Sarde</b></h3>
+                <p><b>Director Administration & Customer Relationship</b></p>
+            </div>
+            <div class=""><br>
+                <h3 class="title"><b>Reshma Rakhunde</b></h3>
+                <p><b>CSR & Resource Management </b></p>
+            </div>
+            <div class=""><br>
+                <h3 class="title"><b>Bapusaheb khule</b></h3>
+                <p><b>Director</b></p>
+            </div>
         </div>
+    </div>
+    </div>
     </div>
     <!-- End About Page -->
 
     <?php
-        include "include/footer.php";
+    include "include/footer.php";
     ?>
-
 
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>

@@ -109,7 +109,7 @@ if (isset($_SESSION['User_ID'])) {
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/categories_img_03.jpg" alt="" />
+                        <img class="img-fluid" style="height: 220px;" src="images/categories_img_03.jpg" alt="" />
                         <!-- <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a> -->
                     </div>
                 </div>
@@ -117,24 +117,6 @@ if (isset($_SESSION['User_ID'])) {
         </div>
     </div>
     <!-- End Categories -->
-
-    <div class="box-add-products">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="offer-box-products">
-                        <img class="img-fluid" style="height: 350px; width:100%" src="images/add-img-01.jpg" alt="" />
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="offer-box-products">
-                        <img class="img-fluid" style="height: 350px; width:100%" src="images/add-img-02.jpg" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Start Blog  -->
     <div class="latest-blog">
         <div class="container">
@@ -179,7 +161,7 @@ if (isset($_SESSION['User_ID'])) {
 
 
     <!-- Start Instagram Feed  -->
-    <div class="instagram-box">
+    <!-- <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
@@ -262,7 +244,7 @@ if (isset($_SESSION['User_ID'])) {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Instagram Feed  -->
 
 

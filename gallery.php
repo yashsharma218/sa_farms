@@ -95,23 +95,23 @@ if (isset($_SESSION['User_ID'])) {
 
                 while ($row = mysqli_fetch_array($result)) {
                 ?>
-                <div class="col-lg-3 col-md-6 special-grid <?php echo $row['category'] ?>">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <img src="admin/<?php echo $row['image'] ?>" style="height: 200px; width: 230px"
-                                class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right"
-                                            title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
+                    <div class="col-lg-3 col-md-6 special-grid <?php echo $row['category'] ?>">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src="admin/<?php echo $row['image'] ?>" style="height: 200px; width: 230px" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="why-text" align="center">
+                                <a href="shop-detail.php?P_ID=<?php echo $row['id'] ?>">
+                                    <h4><?php echo $row['name'] ?></h4>
+                                </a>
                             </div>
                         </div>
-                        <div class="why-text" align="center">
-                            <a href="shop-detail.php?P_ID=<?php echo $row['id'] ?>"><h4><?php echo $row['name'] ?></h4></a>
-                        </div>
                     </div>
-                </div>
                 <?php } ?>
             </div>
         </div>

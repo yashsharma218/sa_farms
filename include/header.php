@@ -50,11 +50,12 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="index.php" align="center">
-                    <img src="images/logo.png" style="height: 80px;  width: 80px; border-radius: 20px; color:white;">
-                    <!-- <big style="color: #ff210a;"> RA </big><small style="color: white;"> info solution</small> -->
-                    <span>
-                        <p style="color: black; color:red;"><b>SARUBAI AGRO FARMER</b></p>
-                    </span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="images/logo.jpg" style="height: 100%; width: 250px;">
+                    <!-- <span>
+                        <p style="color:red;"><b>SARUBAI AGRO</b></p>
+                        <p><b>FARMER PRODUCER COMPANY LTD</b></p>
+                    </span> -->
                 </a>
                 <!-- <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt=""></a> -->
             </div>

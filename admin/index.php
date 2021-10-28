@@ -138,7 +138,7 @@ if (!isset($username)) {
                                             <tr>
                                                 <th scope="col">Sr No.</th>
                                                 <th scope="col">Name</th>
-                                                <th scope="col">Gender</th>
+                                                <th scope="col">Customer Category</th>
                                                 <th scope="col">Number</th>
                                                 <th scope="col">Address</th>
                                                 <th scope="col">Requirement</th>
@@ -157,9 +157,9 @@ if (!isset($username)) {
                                                 <tr>
                                                     <th scope="row"><?php echo ++$srno; ?></th>
                                                     <td><?php echo $row['name']; ?></td>
-                                                    <td><?php echo $row['gender']; ?></td>
+                                                    <td><?php echo $row['customer_category']; ?></td>
                                                     <td><?php echo $row['number']; ?></td>
-                                                    <td><?php echo $row['address']; ?>&nbsp;<?php echo $row['pincode']; ?></td>
+                                                    <td><?php echo $row['address']; ?></td>
                                                     <td><?php echo $row['requirement']; ?></td>
                                                     <td><?php echo $row['description']; ?></td>
                                                     <td><a href="status_contact_us.php?C_ID=<?php echo $row['id'] ?>" style="color: blue;"><?php echo $row['status']; ?></a></td>

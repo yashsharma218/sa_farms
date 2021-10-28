@@ -80,10 +80,11 @@ if (isset($_SESSION['User_ID'])) {
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <select id="gender" name="gender" class="form-control">
-                                            <option value="">--Select Gender--</option>
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
+                                        <select id="customer_category" name="customer_category" class="form-control">
+                                            <option value="">--Select Category--</option>
+                                            <option value="Farmer">Farmer</option>
+                                            <option value="Buyer">Buyer</option>
+                                            <option value="Agent">Agent</option>
                                         </select>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -100,13 +101,6 @@ if (isset($_SESSION['User_ID'])) {
                                         <textarea class="form-control" id="address" name="address"
                                             placeholder="Address *" rows="2" data-error="Write your Address"
                                             required></textarea>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="pincode" name="pincode"
-                                            placeholder="Pin-Code *" required data-error="Please enter your Pincode">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -156,9 +150,14 @@ if (isset($_SESSION['User_ID'])) {
                         <p><b>SARUBAI AGRO FARMER PRODUCER COMPANY LIMITED</b></p>
                         <ul>
                             <li>
-                                <p><i class="fas fa-map-marker-alt"></i>Address: Kumbhargaon Tal-Karmala Dist-Solapur
-                                    Pin-413203
-                                    Maharashtra INDIA.
+                                <p><i class="fas fa-map-marker-alt"></i>Register office address - GAT. NO.242/2 KUMBHEJ
+                                    PHATA, KUMBHEJ TAL KARMALA DIST SOLAPUR, KARMALA, Solapur, Maharashtra, India,
+                                    413203
+                                </p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-map-marker-alt"></i>Pune office :- SHRI PAWAR BALNATH SHRIDHAR
+                                    SNO.500/1 SARITA SANGAM KASARWADI FLAT-G/503 PUNE 411034
                                 </p>
                             </li>
                             <li>
@@ -178,94 +177,7 @@ if (isset($_SESSION['User_ID'])) {
     </div>
     <!-- End Cart -->
 
-    <!-- Start Instagram Feed  -->
-    <div class="instagram-box">
-        <div class="main-instagram owl-carousel owl-theme">
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-01.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-02.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-03.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-04.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-06.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-07.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-08.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-09.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Instagram Feed  -->
-
-
+    
     <?php
         include "include/footer.php";
     ?>
@@ -293,29 +205,26 @@ if (isset($_SESSION['User_ID'])) {
 <?php
     if(isset($_POST['submit'])){
         $name=$_POST['name'];
-        $gender=$_POST['gender'];
+        $customer_category=$_POST['customer_category'];
         $number=$_POST['number'];
         $address=$_POST['address'];
-        $pincode=$_POST['pincode'];
         $requirement=$_POST['requirement'];
         $description=$_POST['description'];
 
         if(!isset($name) || $name === ''){
             echo"<script>alert ('Please Enter Name..');</script>";
-        }elseif(!isset($gender)|| $gender === ''){
-            echo"<script>alert ('Please Enter E-mail..');</script>";
+        }elseif(!isset($customer_category)|| $customer_category === ''){
+            echo"<script>alert ('Please Select Customer Category..');</script>";
         }elseif(!isset($number)|| $number === ''){
-            echo"<script>alert ('Please Enter Subject..');</script>";
+            echo"<script>alert ('Please Enter Mobile Number..');</script>";
         }elseif(!isset($address)|| $address === ''){
-            echo"<script>alert ('Please Enter Message..');</script>";
-        }elseif(!isset($pincode)|| $pincode === ''){
-            echo"<script>alert ('Please Enter Message..');</script>";
+            echo"<script>alert ('Please Enter Your Address..');</script>";
         }elseif(!isset($requirement)|| $requirement === ''){
-            echo"<script>alert ('Please Enter Message..');</script>";
+            echo"<script>alert ('Please Enter Requirement..');</script>";
         }elseif(!isset($description)|| $description === ''){
-            echo"<script>alert ('Please Enter Message..');</script>";
+            echo"<script>alert ('Please Enter Description..');</script>";
         }else{
-            $query="insert into contact_us(name,gender,number,address,pincode,requirement,description) values('$name','$gender','$number','$address','$pincode','$requirement','$description')";
+            $query="insert into contact_us(name,customer_category,number,address,requirement,description) values('$name','$customer_category','$number','$address','$requirement','$description')";
             
             $result=mysqli_query($conn, $query);
 

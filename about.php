@@ -69,9 +69,6 @@ if (isset($_SESSION['User_ID'])) {
                 <div class="col-lg-6">
                     <div class="banner-frame">
                         <img class="img-fluid" src="images/about-img.jpg" alt="" />
-                        <br><br>
-                    <p align="center" style="color: blue;">“FARMING IS NOT JUST A JOB ITS A WAY OF LIFE”</p>
-
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -92,112 +89,10 @@ if (isset($_SESSION['User_ID'])) {
                         provide Fair remunerative value & their ROI on planted Crops to each associated farmer in
                         organized manner to improve profitability. All farmers & their next generation should enjoy
                         farming.</p>
+                    <p align="center" style="color: blue;">“FARMING IS NOT JUST A JOB ITS A WAY OF LIFE”</p>
+
                 </div>
             </div>
-            <!-- <div class="row my-5">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="service-block-inner">
-                        <h3>We are Trusted</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="service-block-inner">
-                        <h3>We are Professional</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="service-block-inner">
-                        <h3>We are Expert</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. </p>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="row my-4">
-                <div class="col-12">
-                    <h2 class="noo-sh-title">Meet Our Team</h2>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Balnath Pawar</h3> <span class="post">MD & Chairmen</span>
-                            </div>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="fab fa-facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
-                            </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <p>I always remember my mother's word during my childhood that you should do Job but no
-                                Farming, but it was always love and affection that kept me connected with Farmers being
-                                born in Farmer Family. The time spent during school days and close experience of Farmer
-                                life which is still not easy to live because it always with full of challenges.
-                                I have the opportunity to spend a long time during the Corona pandemic with our Farmers,
-                                family members, friends, relatives, and people who are totally engaged at Farm and some
-                                of them move out of Farming activities. These all have in-depth connect & lovely bonding
-                                which give them joy, happiness, and satisfaction in their life.
-                                I am born a Farmer and will always want to remain a proud Farmer. There are a lot of
-                                challenges & opportunities in this sector. It inspires me to start this business.
-                                We have begun this journey to give back to society as much as we can. This is our true,
-                                sincere and honest effort to organize our Agri Culture.
-                            </p>
-                        </div>
-                        <hr class="my-0">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-2.jpg" alt="" />
-                            <div class="team-content">
-                                <h3 class="title">Surekha Pawar</h3> <span class="post">Director Managing Pulses and Spices.</span>
-                            </div>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="fab fa-facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-google-plus"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fab fa-youtube"></a>
-                                </li>
-                            </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <p>To manage the kitchen is always a challenge for every Homer Maker because of what food
-                                grain and fruit we eat whether has been grown, processed, and packed in the right
-                                hygienic manner. The nutritional are intact. In the food industry, only brands and
-                                packing can’t give assurance of quality safe foods.
-                                We being self producer & all our farms are managed under close observation of expert
-                                team. These all food grains are authenticated.
-                                We give this assurance because we use our traditional seeds that are not genetically
-                                modified
-                                . </p>
-                        </div>
-                        <hr class="my-0">
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
     <div class="about-box-main">

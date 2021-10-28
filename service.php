@@ -123,7 +123,7 @@ if (isset($_SESSION['User_ID'])) {
                 </div>
                 <div class="col-lg-6">
                     <div class="banner-frame">
-                        <img class="img-fluid" src="images/onion.jpg" alt="" />
+                        <img class="img-fluid" style="height: 300PX;" src="images/onion.jpg" alt="" />
                     </div>
                 </div>
             </div><br><br><br>
@@ -155,7 +155,7 @@ if (isset($_SESSION['User_ID'])) {
 
 
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <h2 class="noo-sh-title-top" align="center"> FARMER TRAINING & SUPPORT CENTER </h2><br>
                     <p>We have a team of experts having rich experience in the Agriculture Sector, Crop-specific support
                         and guidance are available. We are building a training module in the local language. We are
@@ -174,6 +174,11 @@ if (isset($_SESSION['User_ID'])) {
                             Subsidize for each crop.
                         </b>
                     </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="banner-frame">
+                        <img class="img-fluid" src="images/farmer training.png" alt="" />
+                    </div>
                 </div>
             </div>
         </div>
