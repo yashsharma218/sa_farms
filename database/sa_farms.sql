@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2021 at 12:23 PM
+-- Generation Time: Oct 29, 2021 at 09:47 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -40,7 +40,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `username`, `password`) VALUES
-(3, 'Admin', 'admin', 'admin');
+(1, 'Admin', 'admin', 'admin'),
+(5, 'Yash', 'yash', 'yash');
 
 -- --------------------------------------------------------
 
@@ -51,17 +52,13 @@ INSERT INTO `admin` (`id`, `name`, `username`, `password`) VALUES
 CREATE TABLE `contact_us` (
   `id` int(11) NOT NULL,
   `name` varchar(20) DEFAULT NULL,
-  `mail` varchar(50) DEFAULT NULL,
-  `subject` varchar(100) DEFAULT NULL,
-  `message` varchar(1000) DEFAULT NULL
+  `customer_category` varchar(15) DEFAULT NULL,
+  `number` bigint(20) DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `requirement` varchar(30) DEFAULT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `status` varchar(15) NOT NULL DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `contact_us`
---
-
-INSERT INTO `contact_us` (`id`, `name`, `mail`, `subject`, `message`) VALUES
-(1, 'Demo', 'demo@gmail.com', 'Demo', 'This is Demo Message');
 
 -- --------------------------------------------------------
 
@@ -82,11 +79,12 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`id`, `image`, `name`, `category`, `description`) VALUES
+(1, 0x696d616765732f62616e616e612e6a7067, 'Banana', 'dominant_fruits', ''),
+(2, 0x696d616765732f6f6e696f6e2e6a7067, 'Onion', 'vegetable', ''),
+(3, 0x696d616765732f6772617065732e6a7067, 'Grapes', 'dominant_fruits', ''),
 (5, 0x696d616765732f63757374617265645f6170706c652e6a7067, 'Custared  Apple', 'dominant_fruits', ''),
-(6, 0x696d616765732f6772617065732e6a7067, 'Grapes', 'dominant_fruits', ''),
 (7, 0x696d616765732f706f6d6772616e6174652e6a7067, 'Pomgranate   ', 'dominant_fruits', ''),
 (8, 0x696d616765732f67756176612e6a7067, 'Guava', 'dominant_fruits', ''),
-(9, 0x696d616765732f6f6e696f6e2e6a7067, 'Onion ', 'vegetable', ''),
 (10, 0x696d616765732f6761726c69632e6a7067, 'Garlic', 'vegetable', ''),
 (11, 0x696d616765732f746f6d6f74746f2e6a7067, 'Tomotto', 'vegetable', ''),
 (12, 0x696d616765732f736f726768756d2e6a7067, 'Sorghum ', 'food_grain', ''),
@@ -98,8 +96,7 @@ INSERT INTO `gallery` (`id`, `image`, `name`, `category`, `description`) VALUES
 (18, 0x696d616765732f6d6f6f6e672e6a7067, 'Moong', 'pulses', ''),
 (19, 0x696d616765732f6368616e6e612e6a7067, 'Channa(Harbhara )    ', 'pulses', ''),
 (20, 0x696d616765732f756469642e6a7067, 'Udid (Urad)', 'pulses', ''),
-(21, 0x696d616765732f6368696c6c792e6a7067, 'Chilly', 'spices', ''),
-(23, 0x696d616765732f62616e616e612e6a7067, 'Banana', 'dominant_fruits', '');
+(21, 0x696d616765732f6368696c6c792e6a7067, 'Chilly', 'spices', '');
 
 -- --------------------------------------------------------
 
@@ -111,13 +108,6 @@ CREATE TABLE `offer` (
   `id` int(11) NOT NULL,
   `offer` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `offer`
---
-
-INSERT INTO `offer` (`id`, `offer`) VALUES
-(1, 'This is Demo Offer1');
 
 -- --------------------------------------------------------
 
@@ -247,19 +237,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `offer`

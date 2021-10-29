@@ -235,7 +235,6 @@ if (isset($_SESSION['User_ID'])) {
                                 </li> -->
                             </ul>
                         </div>
-                        <hr class="my-0">
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-9">
@@ -246,6 +245,10 @@ if (isset($_SESSION['User_ID'])) {
                     </div>
                 </div>
             </div>
+            <hr class="my-0"><br>
+            <div class="col-12">
+                    <h2 class="noo-sh-title"><em><u>Members</u></em></h2>
+                </div>
             <div class=""><br>
                 <h3 class="title"><b>Changdev Kolapkar</b></h3>
                 <p><b>Director (Guidance, Training & Support)</b>:-There are two main enemies in farming that have

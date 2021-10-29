@@ -42,12 +42,19 @@
             <b>Personal Information</b>
             </a>
         </li>
+        <?php
+
+        $query= "select * from admin where username='$username'";
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_array($result);
+        if( $row['id']==1){?>
         <li class="w-full h-full py-3 px-2 border-b border-light-border">
             <a href="add_admin_account.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                 <i class="fa fa-users float-left mx-2"></i>
                 Add Admin Account
             </a>
         </li>
+        <?php } ?>
         <li class="w-full h-full py-3 px-2 border-b border-light-border">
             <a href="change_user_name.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                 <i class="fa fa-user-secret float-left mx-2"></i>

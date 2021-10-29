@@ -3,10 +3,6 @@ include "include/connect.php";
 session_start();
 $username=$_SESSION['User_ID'];
 
-if(!isset($username)){
-    header('location: login.php');
-}
-
 $id = $_GET['P_ID'];
 ?>
 <!DOCTYPE html>
@@ -38,11 +34,6 @@ $id = $_GET['P_ID'];
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -102,44 +93,6 @@ $id = $_GET['P_ID'];
                                             } else {
                                                 echo $row['description'];
                                             } ?></p>
-                        <!-- <ul>
-                            <li>
-                                <div class="form-group quantity-box">
-                                    <label class="control-label">Quantity</label>
-                                    <input class="form-control" value="1" name="qty" id="qty" min="1" max="20"
-                                        type="number">
-                                </div>
-                            </li>
-                        </ul> -->
-
-                        <!-- <div class="price-box-bar">
-                            <div class="cart-and-bay-btn">
-                                <?php if ($row['stock'] == 'In Stock') { ?>
-                                    <button class="btn hvr-hover" data-fancybox-close="" style="color: white;font-weight: bold; padding: 9px 18px;" type="submit">Buy Now</button>
-                                
-                                <a class="btn hvr-hover" data-fancybox-close="" href="#">Add to cart</a>
-
-
-                                <?php } else { ?>
-                                <p class="available-stock">
-                                    <span
-                                        style="color: red; font-size:20px;"><b><?php echo $row['stock'] ?></b></a></span>
-                                    <?php } ?>
-                            </div>
-                        </div> -->
-
-                        <!-- <div class="add-to-btn">
-                            <div class="add-comp">
-                                <a class="btn hvr-hover" href="#"><i class="fas fa-heart"></i> Add to wishlist</a>
-                            </div>
-                            <div class="share-bar">
-                                <a class="btn hvr-hover" href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                                <a class="btn hvr-hover" href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
-                                <a class="btn hvr-hover" href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                                <a class="btn hvr-hover" href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-                                <a class="btn hvr-hover" href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
                 <?php
@@ -147,7 +100,7 @@ $id = $_GET['P_ID'];
             ?>
             </div>
 
-            <div class="row my-5">
+            <!-- <div class="row my-5">
                 <div class="card card-outline-secondary my-4">
                     <div class="card-header">
                         <h2>Product Reviews</h2>
@@ -167,16 +120,16 @@ $id = $_GET['P_ID'];
                             </div>
                         </div>
                         <hr>
+                        
                         <a href="#" class="btn hvr-hover">Leave a Review</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="row my-5">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
                         <h1>Similar Products</h1>
-                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p> -->
                     </div>
                     <div class="featured-products-box owl-carousel owl-theme">
                         <?php
@@ -212,94 +165,6 @@ $id = $_GET['P_ID'];
         </div>
     </div>
     <!-- End Cart -->
-
-    <!-- Start Instagram Feed  -->
-    <div class="instagram-box">
-        <div class="main-instagram owl-carousel owl-theme">
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-01.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-02.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-03.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-04.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-06.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-07.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-08.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-09.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Instagram Feed  -->
-
 
     <?php
     include "include/footer.php";

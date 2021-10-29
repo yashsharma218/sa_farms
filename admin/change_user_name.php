@@ -70,7 +70,7 @@ if (!isset($username)) {
                                         </div><br>
                                     <?php } ?>
                                     <div>
-                                        <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit" name="update_username">Update User Name</button>
+                                        <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit" name="update_username">Update User Details</button>
                                     </div>
                                 </form>
                             </div>

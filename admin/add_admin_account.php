@@ -105,16 +105,19 @@ if (!isset($username)) {
                                             $result = mysqli_query($conn, $query);
                                             $srno = 0;
                                             while ($row = mysqli_fetch_array($result)) {
+                                                if ($row['id'] == 1) {}
+                                                else{
                                             ?>
-                                                <tr>
-                                                    <th scope="row"><?php echo ++$srno; ?></th>
-                                                    <td><?php echo $row['name']; ?></td>
-                                                    <td><?php echo $row['username']; ?></td>
-                                                    <td>
-                                                        <a href='delete_admin.php?A_ID=<?php echo $row['id'] ?>'><i class="fas fa-trash"></i> Remove Admin</a>
-                                                    </td>
-                                                </tr>
+                                                    <tr>
+                                                        <th scope="row"><?php echo ++$srno; ?></th>
+                                                        <td><?php echo $row['name']; ?></td>
+                                                        <td><?php echo $row['username']; ?></td>
+                                                        <td>
+                                                            <a href='delete_admin.php?A_ID=<?php echo $row['id'] ?>'><i class="fas fa-trash"></i> Remove Admin</a>
+                                                        </td>
+                                                    </tr>
                                             <?php
+                                                }
                                             }
                                             ?>
                                         </tbody>
@@ -214,15 +217,15 @@ if (isset($_POST['register'])) {
                 alert("Password Do not Match..");
                 window.location = "add_admin_account.php";
             </script>
-<?php
+        <?php
         }
-    }else{
+    } else {
         ?>
 
-            <script type="text/javascript">
-                alert("User already exist, Please Chnage Your User ID..");
-                window.location = "add_admin_account.php";
-            </script>
+        <script type="text/javascript">
+            alert("User already exist, Please Chnage Your User ID..");
+            window.location = "add_admin_account.php";
+        </script>
 <?php
     }
 }

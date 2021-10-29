@@ -47,6 +47,24 @@ if (!isset($username)) {
                     <div class="flex flex-col">
                         <!-- Stats Row Starts Here -->
                         <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
+                        <div class="shadow bg-success border-l-8 hover:bg-success-dark border-success-dark mb-2 p-2 md:w-1/4 mx-2">
+                                <div class="p-4 flex flex-col">
+                                    <?php
+                                    $query = "select id from gallery";
+                                    $result = mysqli_query($conn, $query);
+                                    $total_product = 0;
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        $total_product++;
+                                    } ?>
+                                    <a href="#" class="no-underline text-white text-2xl">
+                                        <?php echo $total_product; ?>
+                                    </a>
+
+                                    <a href="#" class="no-underline text-white text-lg">
+                                        Total Products
+                                    </a>
+                                </div>
+                            </div>
                             <div class="shadow-lg bg-red-vibrant border-l-8 hover:bg-red-vibrant-dark border-red-vibrant-dark mb-2 p-2 md:w-1/4 mx-2">
                                 <div class="p-4 flex flex-col">
                                     <?php
@@ -64,7 +82,6 @@ if (!isset($username)) {
                                     </a>
                                 </div>
                             </div>
-
                             <div class="shadow bg-info border-l-8 hover:bg-info-dark border-info-dark mb-2 p-2 md:w-1/4 mx-2">
                                 <div class="p-4 flex flex-col">
                                     <?php
@@ -83,39 +100,21 @@ if (!isset($username)) {
                                     </a>
                                 </div>
                             </div>
-                            <div class="shadow bg-success border-l-8 hover:bg-success-dark border-success-dark mb-2 p-2 md:w-1/4 mx-2">
-                                <div class="p-4 flex flex-col">
-                                    <?php
-                                    $query = "select id from gallery";
-                                    $result = mysqli_query($conn, $query);
-                                    $total_product = 0;
-                                    while ($row = mysqli_fetch_array($result)) {
-                                        $total_product++;
-                                    } ?>
-                                    <a href="#" class="no-underline text-white text-2xl">
-                                        <?php echo $total_product; ?>
-                                    </a>
-
-                                    <a href="#" class="no-underline text-white text-lg">
-                                        Total Products
-                                    </a>
-                                </div>
-                            </div>
                             <div class="shadow bg-warning border-l-8 hover:bg-warning-dark border-warning-dark mb-2 p-2 md:w-1/4 mx-2">
                                 <div class="p-4 flex flex-col">
                                     <?php
-                                    $query = "select grand_total from product_order";
+                                    $query = "select id from admin";
                                     $result = mysqli_query($conn, $query);
-                                    $total = 0;
+                                    $adminaccount = 0;
                                     while ($row = mysqli_fetch_array($result)) {
-                                        $total = $total + $row['grand_total'];
+                                        $adminaccount++;
                                     }
                                     ?>
                                     <a href="#" class="no-underline text-white text-2xl">
-                                        
+                                    <?php echo $adminaccount; ?>
                                     </a>
                                     <a href="#" class="no-underline text-white text-lg">
-                                        Blank
+                                        Total Admin Account
                                     </a>
                                 </div>
                             </div>
