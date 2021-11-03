@@ -73,7 +73,7 @@ if (isset($_SESSION['User_ID'])) {
                         <div class="our-team"> <img src="images/team1.jpg"
                                 alt="Your Browser Does not Support this Image.." />
                             <div class="">
-                                <h3 class="title">Balnath Pawar</h3>
+                                <h3 class="title">&nbsp;&nbsp;&nbsp;Balnath Pawar</h3>
                             </div>
                             <ul class="social">
                                 <li>
@@ -113,7 +113,7 @@ if (isset($_SESSION['User_ID'])) {
                         <div class="our-team"><br><br> <img src="images/team3.jpg"
                                 alt="Your Browser Does not Support this Image.." />
                             <div class="">
-                                <h3 class="title">Surekha Pawar</h3>
+                                <h3 class="title">&nbsp;&nbsp;&nbsp;Surekha Pawar</h3>
                             </div>
                             <ul class="social">
                                 <li>
@@ -153,7 +153,7 @@ if (isset($_SESSION['User_ID'])) {
                         <div class="our-team"><br><br> <img src="images/team2.jpg"
                                 alt="Your Browser Does not Support this Image.." />
                             <div class="">
-                                <h3 class="title">Bapusaheb Katule</h3>
+                                <h3 class="title">&nbsp;&nbsp;&nbsp;Bapusaheb Katule</h3>
                             </div>
                             <ul class="social">
                                 <li>
@@ -181,20 +181,16 @@ if (isset($_SESSION['User_ID'])) {
                         </span>
                     </div>
                 </div>
-
-
-
-                <div class="col-sm-6 col-lg-3">
+                <div class="col-sm-6 col-lg-3"><br>
                     <div class="hover-team">
-                        <div class="our-team"><br><br> <img src="images/img-1.jpg"
-                                alt="Your Browser Does not Support this Image.." />
-                            <div class="">
-                                <h3 class="title">Dadasaheb Katule</h3>
+                        <div class="our-team">
+                            <div class=""><br>
+                                <h3 class="title">&nbsp;&nbsp;&nbsp; Dadasaheb Katule</h3>
                             </div>
                             <ul class="social">
-                                <li>
+                                <!-- <li>
                                     <a href="#" target="blank" class="fab fa-facebook"></a>
-                                </li>
+                                </li> -->
                                 <!-- <li>
                                     <a href="#" target="blank" class="fab fa-twitter"></a>
                                 </li>
@@ -216,17 +212,16 @@ if (isset($_SESSION['User_ID'])) {
 
 
 
-                <div class="col-sm-6 col-lg-3">
+                <div class="col-sm-6 col-lg-3"><br>
                     <div class="hover-team">
-                        <div class="our-team"><br><br> <img src="images/img-3.jpg"
-                                alt="Your Browser Does not Support this Image.." />
+                        <div class="our-team"><br>
                             <div class="">
-                                <h3 class="title">Shridhar Pawar</h3>
+                                <h3 class="title">&nbsp;&nbsp;&nbsp; Shridhar Pawar</h3>
                             </div>
                             <ul class="social">
-                                <li>
+                                <!-- <li>
                                     <a href="#" target="blank" class="fab fa-facebook"></a>
-                                </li>
+                                </li> -->
                                 <!-- <li>
                                     <a href="#" target="blank" class="fab fa-twitter"></a>
                                 </li>

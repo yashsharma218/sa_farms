@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="footer-top-box">
+                    <!-- <div class="footer-top-box">
                         <h3>Social Media</h3><br>
                         <ul>
                             <li><a href="#" target="blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
@@ -23,7 +23,7 @@
                             <li><a href="#" target="blank"><i class="fab fa-google" aria-hidden="true"></i></a></li>
                             <li><a href="#" target="blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <hr>
@@ -92,10 +92,6 @@
 <div class="footer-copyright">
     <p>
         Copyright &copy; 2021 All rights reserved | This template is made with : <a href="#">RA Info Solution</a><br>
-    </p>
-    <p>
-        Click here to admin Login :
-        <a href="admin/index.php" target="blank" style="color: red;">Admin Panel Login</a><br>
     </p>
 </div>
 <!-- End copyright  -->

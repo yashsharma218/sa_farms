@@ -50,14 +50,8 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="index.php" align="center">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="images/logo.jpg" style="height: 100%; width: 250px;">
-                    <!-- <span>
-                        <p style="color:red;"><b>SARUBAI AGRO</b></p>
-                        <p><b>FARMER PRODUCER COMPANY LTD</b></p>
-                    </span> -->
+                    &nbsp;&nbsp;<img src="images/logo.jpg" style="height: 80%; border-radius:20px; width: 200px;">
                 </a>
-                <!-- <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt=""></a> -->
             </div>
             <!-- End Header Navigation -->
 
@@ -66,24 +60,10 @@
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="shop.php">Shop</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="gallery.php">Food Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="team.php">Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="service.php">Service</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
-                    <?php
-                    if (!isset($username) || $username === '') {
-                    ?>
-                    <!-- <li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li> -->
-                    <?php }
-                    ?>
-                    <?php
-                    if (isset($_SESSION['User_ID'])) {
-                        if (isset($username) || $username === '') {
-                    ?>
-                    <!-- <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li> -->
-                    <?php }
-                    } ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
